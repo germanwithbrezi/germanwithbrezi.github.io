@@ -55,7 +55,7 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
 <span style="align-self: flex-start; background: #1A1A1A; color: #FFCE00; font-weight: 800; padding: 6px 14px; border-radius: 6px; font-size: 15px; transform: rotate(-2deg)">GERMAN A1 · A2 · ONLINE · FROM ZERO</span>
 <h1 class="display" style="margin: 0; font-size: 84px; line-height: 0.95">Learn German.<br><span style="color: #C8161D">Laugh a little.</span><br>Pass A1 &amp; A2.</h1>
-<p style="margin: 0; font-size: 21px; line-height: 1.5; max-width: 560px">Small live A1 and A2 batches, taught in English by a teacher who lives in Germany. Exam-focused, fun, and never boring.</p>
+<p style="margin: 0; font-size: 21px; line-height: 1.5; max-width: 560px">Not your usual German class. We laugh, we play, we learn, and you use it from day one. Small live A1 &amp; A2 batches, taught in English by a teacher who lives in Germany.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 14px">
 <a href="#book" class="press" style="background: #C8161D; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 18px; padding: 16px 26px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Book a free demo class</a>
 <a href="play.html" class="press" style="background: #FFFFFF; color: #1A1A1A; text-decoration: none; font-weight: 800; font-size: 18px; padding: 16px 26px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Play der · die · das</a>
@@ -119,7 +119,7 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <div style="background: #FFF6CC; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
 <span class="display" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">1</span>
 <strong style="font-size: 20px">Free demo class</strong>
-<span style="font-size: 16px; line-height: 1.5">45 minutes on Zoom. Meet me, try the method, check your level.</span>
+<span style="font-size: 16px; line-height: 1.5">30 minutes on Zoom. Meet me, tell me your plans, and try a mini-lesson.</span>
 </div>
 <div style="background: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
 <span class="display" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">2</span>
@@ -135,6 +135,29 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <span class="display" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">4</span>
 <strong style="font-size: 20px">Mock exams → certificate</strong>
 <span style="font-size: 16px; line-height: 1.5">Timed Goethe/telc practice tests, then you book the real exam with confidence.</span>
+</div>
+</div>
+</section>
+
+<!-- HACKS -->
+<section id="hacks" style="max-width: 1180px; margin: 0 auto; padding: 56px 24px 24px; display: flex; flex-wrap: wrap; gap: 36px; align-items: center">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 12px">
+<h2 class="display" style="margin: 0; font-size: 58px; line-height: 1">6 German hacks <span style="color: #C8161D">in 60 seconds</span></h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.5">Free, right now, no sign-up. Tap through them. By the end you'll know more German than you think.</p>
+<span class="display" style="font-size: 26px">Hack {{ v.hackNo }} of {{ v.hackCount }}</span>
+</div>
+<div style="flex: 999 1 460px; min-width: 0; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #C8161D; padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<span style="align-self: flex-start; background: #FFCE00; border: 2px solid #1A1A1A; border-radius: 999px; padding: 4px 12px; font-weight: 800; font-size: 14px">{{ v.hack.tag }}</span>
+<span class="display" style="font-size: 40px; line-height: 1.05">{{ v.hack.title }}</span>
+<p style="margin: 0; font-size: 18px; line-height: 1.55">{{ v.hack.text }}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<template v-for="(ex, $index) in v.hack.examples">
+<button class="press" @click="ex.say" :aria-label="ex.label" style="display: flex; align-items: center; gap: 8px; background: #DFF1FF; border: 3px solid #1A1A1A; border-radius: 12px; padding: 8px 14px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; font-weight: 800; color: #1A1A1A"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path></svg>{{ ex.text }}</button>
+</template>
+</div>
+<div style="display: flex; gap: 10px; justify-content: flex-end">
+<button class="press" @click="v.prevHack" style="background: #FFFFFF; border: 3px solid #1A1A1A; border-radius: 12px; box-shadow: 3px 3px 0 #1A1A1A; padding: 10px 18px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; font-weight: 800; color: #1A1A1A">← Back</button>
+<button class="press" @click="v.nextHack" style="background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; border-radius: 12px; box-shadow: 3px 3px 0 #1A1A1A; padding: 10px 18px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; font-weight: 800">{{ v.hackNextLabel }}</button>
 </div>
 </div>
 </section>
@@ -164,10 +187,10 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <strong style="font-size: 19px; flex: 1 1 150px">{{ b.name }}</strong>
 <span style="font-size: 17px; flex: 2 1 240px">{{ b.when }}</span>
 <span style="font-size: 17px; font-weight: 800; color: #8E0E13">{{ b.start }}</span>
-<a href="[GOOGLE FORM LINK]" style="font-weight: 800; font-size: 17px">Reserve →</a>
+<a href="#book" style="font-weight: 800; font-size: 17px">Reserve →</a>
 </div>
 </template>
-<p style="margin: 0; font-size: 16px">Prefer private lessons? <a href="[CALENDLY LINK]" style="font-weight: 800">Book a 1-on-1 time →</a></p>
+<p style="margin: 0; font-size: 16px">Prefer private lessons? <a href="#book" style="font-weight: 800">Ask for a 1-on-1 →</a></p>
 </div>
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px">
 <div style="display: flex; flex-direction: column">
@@ -298,16 +321,53 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
 <h2 class="display" style="margin: 0; font-size: 58px">Not ready yet? <span style="color: #C8161D">Grab the free Starter Kit</span></h2>
 <p style="margin: 0; font-size: 19px; line-height: 1.5">A short PDF with the first words and phrases you need, a cheat sheet for der/die/das, and a sample lesson so you can see how my classes run. Leave your email and it lands in your inbox.</p>
-<a href="[STARTER KIT FORM LINK]" class="press" style="align-self: flex-start; background: #C8161D; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 18px; padding: 16px 26px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Send me the free kit</a>
+<form @submit.prevent="send('kit')" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
+<div v-if="forms.kit.state !== 'sent'" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; width: 100%">
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left; flex: 1 1 180px">First name<input v-model="forms.kit.name" required autocomplete="given-name" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left; flex: 2 1 240px">Email<input v-model="forms.kit.email" type="email" required autocomplete="email" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"></label>
+<button type="submit" class="press" :disabled="forms.kit.state === 'sending'" style="background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 5px 5px 0 #1A1A1A; padding: 13px 22px; font-family: Nunito, system-ui, sans-serif; font-size: 18px; font-weight: 800">{{ forms.kit.state === 'sending' ? 'Sending…' : 'Send me the free kit' }}</button>
+<p v-if="forms.kit.state === 'error'" style="margin: 0; width: 100%; color: #8E0E13; font-weight: 800">Sorry, that didn't go through. Please try again.</p>
+<p v-if="forms.kit.state === 'soon'" style="margin: 0; width: 100%; color: #8E0E13; font-weight: 800">The kit is almost ready. Please check back in a few days!</p>
+</div>
+<p v-if="forms.kit.state === 'sent'" class="pop" style="margin: 0; font-size: 20px; font-weight: 800">Danke! Check your inbox, the kit is on its way.</p>
+</form>
 </div>
 </section>
 
 <!-- CTA -->
 <section id="book" class="halftone" style="background-color: #C8161D; border-top: 4px solid #1A1A1A">
-<div style="max-width: 1180px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; color: #FFFFFF">
-<h2 class="display" style="margin: 0; font-size: 76px; line-height: 1">Try a class. It's free.</h2>
-<p style="margin: 0; font-size: 20px; max-width: 640px; line-height: 1.5">45 minutes on Zoom. You'll introduce yourself in German before the class ends. Promise.</p>
-<a href="[GOOGLE FORM LINK]" class="press" style="background: #FFCE00; color: #1A1A1A; text-decoration: none; font-weight: 800; font-size: 20px; padding: 18px 32px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Book my free demo class</a>
+<div style="max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+<div style="flex: 1 1 340px; color: #FFFFFF; display: flex; flex-direction: column; gap: 16px">
+<h2 class="display" style="margin: 0; font-size: 72px; line-height: 1">Try a class. It's free.</h2>
+<p style="margin: 0; font-size: 20px; line-height: 1.5">30 minutes on Zoom. We say hallo, you tell me your plans, and you try a mini-lesson. No pressure to join.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.5">Just have a question? Use the same form. You'll get an email reply.</p>
+</div>
+<form @submit.prevent="send('demo')" style="flex: 1 1 420px; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #1A1A1A; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<div v-if="forms.demo.state !== 'sent'" style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px" role="group" aria-label="What would you like?">
+<button type="button" class="press" @click="forms.demo.kind = 'Free demo class'" :aria-pressed="forms.demo.kind === 'Free demo class'" :style="pill(forms.demo.kind === 'Free demo class')">Free demo class</button>
+<button type="button" class="press" @click="forms.demo.kind = '1-on-1 lessons'" :aria-pressed="forms.demo.kind === '1-on-1 lessons'" :style="pill(forms.demo.kind === '1-on-1 lessons')">1-on-1 lessons</button>
+<button type="button" class="press" @click="forms.demo.kind = 'A question'" :aria-pressed="forms.demo.kind === 'A question'" :style="pill(forms.demo.kind === 'A question')">Ask a question</button>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Your name<input v-model="forms.demo.name" required autocomplete="name" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Your email<input v-model="forms.demo.email" type="email" required autocomplete="email" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"></label>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Level<select v-model="forms.demo.level" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"><option>A1 – from zero</option><option>A2 – I know A1</option><option>Not sure</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Best time<select v-model="forms.demo.time" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"><option>Weekday evenings</option><option>Weekends</option><option>Either</option></select></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Why German? Anything you want to ask?<textarea v-model="forms.demo.message" rows="3" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A; resize: vertical"></textarea></label>
+<button type="submit" class="press" :disabled="forms.demo.state === 'sending'" style="background: #FFCE00; color: #1A1A1A; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 5px 5px 0 #1A1A1A; padding: 14px 22px; font-family: Nunito, system-ui, sans-serif; font-size: 19px; font-weight: 800">{{ forms.demo.state === 'sending' ? 'Sending…' : 'Send' }}</button>
+<p v-if="forms.demo.state === 'error'" style="margin: 0; color: #8E0E13; font-weight: 800">Sorry, that didn't go through. Please try again in a minute.</p>
+<p v-if="forms.demo.state === 'soon'" style="margin: 0; color: #8E0E13; font-weight: 800">Bookings open very soon. Please check back in a few days!</p>
+<p style="margin: 0; font-size: 13px; color: #555555">Your details are only used to reply to you.</p>
+</div>
+<div v-if="forms.demo.state === 'sent'">
+<div class="pop" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; padding: 20px 0">
+<span class="display" style="font-size: 54px; color: #C8161D">Danke!</span>
+<p style="margin: 0; font-size: 18px; line-height: 1.5">Got it. Check your inbox: a confirmation is on its way, and I'll reply personally within 24 hours.</p>
+</div>
+</div>
+</form>
 </div>
 </section>
 
@@ -315,10 +375,7 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <footer style="background: #1A1A1A; color: #FFFFFF">
 <div style="max-width: 1180px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 15px">
 <span class="display" style="font-size: 24px; color: #FFCE00">German with Brezi · by Sruthi</span>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<a href="[INSTAGRAM LINK]" style="color: #FFCE00">Instagram [@HANDLE]</a>
-<a href="mailto:nagarisruthi@gmail.com" style="color: #FFCE00">nagarisruthi@gmail.com</a>
-</div>
+<span style="color: #CCCCCC">Questions? Use the form on the <a href="#book" style="color: #FFCE00">home page</a>.</span>
 </div>
 </footer>
 
@@ -334,7 +391,7 @@ class DCLogic {
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { greetIdx: 0, openQ: null, gameIdx: 0, answered: false, picked: null, score: 0, tries: 0, flipped: {}, level: 'A1', introLang: 'en', lang: 'de', rot: 0, spinning: false, phase: 'idle', seg: 0, asked: [], qPicked: null, correct: 0, correctA2: 0 };
+    this.state = { greetIdx: 0, openQ: null, gameIdx: 0, answered: false, picked: null, score: 0, tries: 0, flipped: {}, level: 'A1', introLang: 'en', lang: 'de', hackIdx: 0, rot: 0, spinning: false, phase: 'idle', seg: 0, asked: [], qPicked: null, correct: 0, correctA2: 0 };
   }
   componentWillUnmount() { if (this.spinTimer) clearTimeout(this.spinTimer); }
   speak(text) {
@@ -473,6 +530,17 @@ class Component extends DCLogic {
     if (s.spinning) quizStatus = 'Spinning…';
     else if (s.phase === 'result') quizStatus = 'Done! Your result is in.';
     else if (done > 0) quizStatus = 'Question ' + done + ' of ' + total + ' · ' + s.correct + ' right so far';
+    const hacks = [
+      { tag: 'Reading', title: 'Every noun wears a capital letter', text: 'In German, all nouns start with a capital letter, not just names. Spot the capitals and you have found the things in any sentence.', ex: ['Der Hund trinkt Wasser.'] },
+      { tag: 'Free words', title: 'You already know hundreds of words', text: 'German and English are cousins. Many words look and sound almost the same.', ex: ['das Haus', 'das Buch', 'das Wasser', 'der Garten'] },
+      { tag: 'Pronunciation', title: 'ei says "eye", ie says "ee"', text: 'Read the second letter: ei sounds like the English word eye, ie sounds like ee. Wein is wine, Wien is Vienna.', ex: ['Wein', 'Wien', 'mein', 'Liebe'] },
+      { tag: 'Pronunciation', title: 'W sounds like V', text: 'A German W is said like an English V. So Wasser sounds like "vasser" and wo (where) like "vo".', ex: ['Wasser', 'wo', 'Wetter'] },
+      { tag: 'der · die · das', title: '-ung, -heit, -keit? Always die', text: 'Nouns ending in -ung, -heit, -keit or -schaft are always feminine. Free articles for thousands of words.', ex: ['die Zeitung', 'die Freiheit', 'die Freundschaft'] },
+      { tag: 'Grammar', title: 'The verb sits in seat 2', text: 'In a normal sentence the verb is always the second element. Move something else to the front and the subject slides behind the verb.', ex: ['Ich lerne heute.', 'Heute lerne ich.'] }
+    ];
+    const hi = (s.hackIdx || 0) % hacks.length;
+    const hk = hacks[hi];
+    const hack = { tag: hk.tag, title: hk.title, text: hk.text, examples: hk.ex.map((t) => ({ text: t, label: 'Hear ' + t, say: () => this.speak(t) })) };
     const pill = (on) => 'padding: 10px 18px; border: 3px solid #1A1A1A; border-radius: 999px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; font-weight: 800; box-shadow: 3px 3px 0 #1A1A1A; background: ' + (on ? '#1A1A1A' : '#FFFFFF') + '; color: ' + (on ? '#FFCE00' : '#1A1A1A');
     const courseData = {
       A1: { short: 'A1', title: 'The A1 course', lead: 'From zero to your first real conversations, and the Goethe/telc A1 certificate.', book: 'Netzwerk neu A1', exam: 'Goethe / telc A1 mock tests' },
@@ -533,6 +601,10 @@ class Component extends DCLogic {
       correct: s.correct, resultTitle: resultTitle, resultText: resultText,
       resetQuiz: () => this.setState({ phase: 'idle', asked: [], qPicked: null, correct: 0, correctA2: 0 }),
       quizDots: quizDots, quizStatus: quizStatus,
+      hack: hack, hackNo: hi + 1, hackCount: hacks.length,
+      hackNextLabel: hi === hacks.length - 1 ? 'Start again ↺' : 'Next hack →',
+      nextHack: () => this.setState({ hackIdx: (hi + 1) % hacks.length }),
+      prevHack: () => this.setState({ hackIdx: (hi + hacks.length - 1) % hacks.length }),
       course: course, levels: levels,
       intro: intros[s.introLang] || intros.en, introTabs: introTabs,
       lang: curLang, langs: langs,
@@ -557,7 +629,29 @@ class Component extends DCLogic {
   const comp = new Component({});
   const store = PetiteVue.reactive({ s: comp.state });
   comp.state = store.s;
-  PetiteVue.createApp({ get v() { return comp.renderVals(); } }).mount('#app');
+  // Google Form connection: fill in after creating the forms (see ops repo docs/forms-setup.md).
+  const FORMS = {
+    demo: { action: '', fields: { kind: '', name: '', email: '', level: '', time: '', message: '' } },
+    kit: { action: '', fields: { name: '', email: '' } }
+  };
+  PetiteVue.createApp({
+    get v() { return comp.renderVals(); },
+    forms: {
+      demo: { kind: 'Free demo class', name: '', email: '', level: 'A1 – from zero', time: 'Weekday evenings', message: '', state: 'idle' },
+      kit: { name: '', email: '', state: 'idle' }
+    },
+    pill(on) { return 'padding: 9px 14px; border: 3px solid #1A1A1A; border-radius: 999px; font-family: Nunito, system-ui, sans-serif; font-size: 15px; font-weight: 800; background: ' + (on ? '#1A1A1A' : '#FFFFFF') + '; color: ' + (on ? '#FFCE00' : '#1A1A1A'); },
+    send(which) {
+      const f = this.forms[which], cfg = FORMS[which];
+      if (!cfg.action) { f.state = 'soon'; return; }
+      f.state = 'sending';
+      const body = new URLSearchParams();
+      Object.keys(cfg.fields).forEach((k) => { if (cfg.fields[k]) body.append(cfg.fields[k], f[k] || ''); });
+      fetch(cfg.action, { method: 'POST', mode: 'no-cors', body: body })
+        .then(() => { f.state = 'sent'; })
+        .catch(() => { f.state = 'error'; });
+    }
+  }).mount('#app');
 })();
 </script>
 </body>
