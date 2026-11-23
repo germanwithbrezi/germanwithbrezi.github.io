@@ -69,9 +69,9 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <a href="#course" class="press" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; background: #1A1A1A; color: #FFFFFF; text-decoration: none; border: 4px solid #1A1A1A; border-radius: 22px; box-shadow: 6px 6px 0 #C8161D; padding: 18px 24px">
 <span style="display: flex; align-items: center; gap: 14px">
 <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FFCE00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h3v3H8z"></path></svg>
-<span style="display: flex; flex-direction: column"><span class="display" style="font-size: 30px; color: #FFCE00">Next batches</span><span style="font-size: 16px; font-weight: 600">A1 &amp; A2 · evenings and weekends (IST)</span></span>
+<span style="display: flex; flex-direction: column"><span class="display" style="font-size: 30px; color: #FFCE00">Next batches</span><span style="font-size: 16px; font-weight: 600">A new batch every month · evenings and weekends (IST)</span></span>
 </span>
-<span style="font-weight: 800; font-size: 18px">See dates →</span>
+<span style="font-weight: 800; font-size: 18px">Find your batch →</span>
 </a>
 </div>
 <div style="flex: 1 1 340px; display: flex; flex-direction: column; align-items: center; gap: 8px">
@@ -190,7 +190,7 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <a href="#book" style="font-weight: 800; font-size: 17px">Reserve →</a>
 </div>
 </template>
-<p style="margin: 0; font-size: 16px">Prefer private lessons? <a href="#book" style="font-weight: 800">Ask for a 1-on-1 →</a></p>
+<p style="margin: 0; font-size: 16px">A new batch every month. Need another time, or prefer private lessons? <a href="#book" style="font-weight: 800">Just ask →</a></p>
 </div>
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px">
 <div style="display: flex; flex-direction: column">
@@ -549,7 +549,7 @@ class Component extends DCLogic {
     const cd = courseData[s.level] || courseData.A1;
     const tile = (bg) => 'background: ' + bg + '; border: 3px solid #1A1A1A; border-radius: 14px; padding: 16px';
     const course = {
-      short: cd.short, title: cd.title, lead: cd.lead, batches: [{ name: 'Evening batch', when: 'Mon · Wed · Fri · 7:00–9:00 pm IST', start: 'Starts [DATE]' }, { name: 'Weekend batch', when: 'Sat · Sun · 3:00–6:00 pm IST', start: 'Starts [DATE]' }],
+      short: cd.short, title: cd.title, lead: cd.lead, batches: [{ name: 'Evening batch', when: 'Mon · Wed · Fri · 7:00–9:00 pm IST', start: 'Starts every month' }, { name: 'Weekend batch', when: 'Sat · Sun · 3:00–6:00 pm IST', start: 'Starts every month' }],
       items: [
         { head: '5–8 learners', text: 'Small enough that everyone speaks', style: tile('#DFF1FF') },
         { head: '40 live classes', text: '2 hours each on Zoom, 3 a week', style: tile('#FFE3E3') },
