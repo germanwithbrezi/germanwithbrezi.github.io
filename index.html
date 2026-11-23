@@ -27,6 +27,30 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 .press{transition:transform .12s ease, box-shadow .12s ease;cursor:pointer}
 .press:hover{transform:translate(-2px,-2px)}
 .press:active{transform:translate(3px,3px)}
+@media (max-width: 640px){
+nav > div{padding:8px 14px !important;gap:6px !important}
+nav a.display{font-size:22px !important}
+.nav-links{flex-wrap:nowrap !important;overflow-x:auto;gap:14px !important;font-size:14px !important;width:100%;padding-bottom:4px}
+.nav-links a{white-space:nowrap;flex:none}
+.nav-links a.press{padding:6px 12px !important}
+section, header > div, section > div{padding-top:28px !important;padding-bottom:28px !important}
+[style*="font-size: 84px"],[style*="font-size: 80px"]{font-size:44px !important}
+[style*="font-size: 76px"],[style*="font-size: 72px"]{font-size:40px !important}
+[style*="font-size: 64px"],[style*="font-size: 60px"],[style*="font-size: 58px"]{font-size:34px !important}
+[style*="font-size: 54px"],[style*="font-size: 52px"],[style*="font-size: 48px"]{font-size:30px !important}
+[style*="font-size: 44px"],[style*="font-size: 40px"]{font-size:27px !important}
+[style*="font-size: 34px"],[style*="font-size: 32px"]{font-size:24px !important}
+[style*="font-size: 21px"],[style*="font-size: 20px"],[style*="font-size: 19px"]{font-size:16px !important}
+[style*="padding: 36px"],[style*="padding: 32px"],[style*="padding: 30px"],[style*="padding: 28px"]{padding:18px !important}
+[style*="gap: 48px"],[style*="gap: 40px"],[style*="gap: 36px"]{gap:18px !important}
+.m-hide{display:none !important}
+.m-2col{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important}
+.m-2col > *{padding:12px !important}
+.m-scroll{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+.m-scroll > *{flex:0 0 78%;scroll-snap-align:start}
+.hero-brezi{width:150px !important;height:130px !important}
+[style*="width: 380px"]{transform:scale(.86);transform-origin:top center;margin-bottom:-58px}
+}
 @media (prefers-reduced-motion: reduce){.bob,.eye,.ticker,.ticker-rev,.wiggle,.pop{animation:none}}
 </style>
 <style>[v-cloak]{display:none}html{scroll-behavior:smooth}</style>
@@ -39,7 +63,7 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <nav style="position: sticky; top: 0; z-index: 10; background: #FFCE00; border-bottom: 4px solid #1A1A1A">
 <div style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
 <a href="#top" class="display" style="font-size: 30px; color: #1A1A1A; text-decoration: none">German <span style="color: #C8161D">with</span> Brezi <span style="font-family: 'Nunito', system-ui, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 0">by Sruthi</span></a>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; font-weight: 800; font-size: 16px">
+<div class="nav-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; font-weight: 800; font-size: 16px">
 <a href="#course" style="color: #1A1A1A; text-decoration: none">Courses</a>
 <a href="#about" style="color: #1A1A1A; text-decoration: none">About</a>
 <a href="play.html" style="color: #1A1A1A; text-decoration: none">Play &amp; learn</a>
@@ -77,7 +101,7 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <div style="flex: 1 1 340px; display: flex; flex-direction: column; align-items: center; gap: 8px">
 <button class="press" @click="v.nextGreeting" aria-label="Make Brezi say another German greeting" style="background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 28px; padding: 18px 30px; box-shadow: 6px 6px 0 #1A1A1A; font-family: 'Bangers', system-ui, sans-serif; font-size: 48px; letter-spacing: 1.5px; color: #1A1A1A; position: relative">{{ v.greeting }}</button>
 <span style="font-size: 14px; font-weight: 600">tap the bubble</span>
-<svg class="bob" width="300" height="260" viewBox="0 0 220 190" aria-hidden="true">
+<svg class="bob hero-brezi" width="300" height="260" viewBox="0 0 220 190" aria-hidden="true">
 <path d="M110 160 C 45 160, 22 98, 52 64 C 82 30, 128 66, 110 104 C 92 66, 138 30, 168 64 C 198 98, 175 160, 110 160 Z" fill="none" stroke="#1A1A1A" stroke-width="30" stroke-linejoin="round"></path>
 <path d="M110 160 C 45 160, 22 98, 52 64 C 82 30, 128 66, 110 104 C 92 66, 138 30, 168 64 C 198 98, 175 160, 110 160 Z" fill="none" stroke="#C9813F" stroke-width="22" stroke-linejoin="round"></path>
 <circle cx="60" cy="70" r="3" fill="#FFFFFF"></circle>
@@ -104,7 +128,7 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 </template>
 </div>
 </div>
-<div aria-hidden="true" style="background: #FFCE00; color: #1A1A1A; overflow: hidden; border-top: 3px solid #1A1A1A; border-bottom: 4px solid #1A1A1A; padding: 12px 0">
+<div aria-hidden="true" class="m-hide" style="background: #FFCE00; color: #1A1A1A; overflow: hidden; border-top: 3px solid #1A1A1A; border-bottom: 4px solid #1A1A1A; padding: 12px 0">
 <div class="ticker-rev" style="display: flex; width: max-content; gap: 40px">
 <template v-for="(t, $index) in v.tickerItems2">
 <span style="font-size: 22px; font-weight: 800; white-space: nowrap">{{ t.de }} <span style="font-weight: 600; color: #8E0E13">= {{ t.en }}</span></span>
@@ -115,7 +139,7 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <!-- HOW IT WORKS -->
 <section id="how" style="max-width: 1180px; margin: 0 auto; padding: 72px 24px 24px; display: flex; flex-direction: column; gap: 26px">
 <h2 class="display" style="margin: 0; font-size: 60px">How the online class <span style="color: #C8161D">works</span></h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
+<div class="m-2col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
 <div style="background: #FFF6CC; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
 <span class="display" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">1</span>
 <strong style="font-size: 20px">Free demo class</strong>
@@ -175,7 +199,7 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 </div>
 <h2 class="display" style="margin: 0; font-size: 58px">{{ v.course.title }}</h2>
 <p style="margin: 0; font-size: 18px; line-height: 1.5">{{ v.course.lead }}</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; font-size: 18px">
+<div class="m-2col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; font-size: 16px">
 <template v-for="(it, $index) in v.course.items">
 <div :style="it.style"><strong>{{ it.head }}</strong><br>{{ it.text }}</div>
 </template>
@@ -251,11 +275,11 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <div style="max-width: 1180px; margin: 0 auto; padding: 64px 24px; display: flex; flex-direction: column; gap: 24px">
 <h2 class="display" style="margin: 0; font-size: 60px">Play &amp; <span style="color: #C8161D">learn</span></h2>
 <p style="margin: 0; font-size: 19px">Four quick games. No sign-up, just tap and learn.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
-<a href="play.html#grammar" class="press" style="text-decoration: none; color: #1A1A1A; background: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span class="display" style="font-size: 32px">Grammar bites</span><span style="font-size: 16px">German grammar as a 3-panel comic.</span><span style="font-weight: 800; color: #C8161D">Read →</span></a>
-<a href="play.html#game" class="press" style="text-decoration: none; color: #1A1A1A; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span class="display" style="font-size: 32px">der · die · das</span><span style="font-size: 16px">Guess the article. Keep your score.</span><span style="font-weight: 800; color: #C8161D">Play →</span></a>
-<a href="play.html#words" class="press" style="text-decoration: none; color: #1A1A1A; background: #FFE3E3; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span class="display" style="font-size: 32px">Flip words</span><span style="font-size: 16px">Flip a card, hear it in German.</span><span style="font-weight: 800; color: #C8161D">Flip →</span></a>
-<a href="play.html#quiz" class="press" style="text-decoration: none; color: #1A1A1A; background: #E6F6EC; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span class="display" style="font-size: 32px">Spin the wheel</span><span style="font-size: 16px">5 spins, 5 surprise questions.</span><span style="font-weight: 800; color: #C8161D">Spin →</span></a>
+<div class="m-2col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
+<a href="play.html#grammar" class="press" style="text-decoration: none; color: #1A1A1A; background: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span class="display" style="font-size: 32px">Grammar bites</span><span class="m-hide" style="font-size: 16px">German grammar as a 3-panel comic.</span><span style="font-weight: 800; color: #C8161D">Read →</span></a>
+<a href="play.html#game" class="press" style="text-decoration: none; color: #1A1A1A; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span class="display" style="font-size: 32px">der · die · das</span><span class="m-hide" style="font-size: 16px">Guess the article. Keep your score.</span><span style="font-weight: 800; color: #C8161D">Play →</span></a>
+<a href="play.html#words" class="press" style="text-decoration: none; color: #1A1A1A; background: #FFE3E3; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span class="display" style="font-size: 32px">Flip words</span><span class="m-hide" style="font-size: 16px">Flip a card, hear it in German.</span><span style="font-weight: 800; color: #C8161D">Flip →</span></a>
+<a href="play.html#quiz" class="press" style="text-decoration: none; color: #1A1A1A; background: #E6F6EC; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span class="display" style="font-size: 32px">Spin the wheel</span><span class="m-hide" style="font-size: 16px">5 spins, 5 surprise questions.</span><span style="font-weight: 800; color: #C8161D">Spin →</span></a>
 </div>
 </div>
 </section>
@@ -263,7 +287,7 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <!-- REVIEWS -->
 <section id="reviews" style="max-width: 1180px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 24px">
 <h2 class="display" style="margin: 0; font-size: 60px">What students <span style="color: #C8161D">say</span></h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px">
+<div class="m-scroll" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px">
 <div style="background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 22px; box-shadow: 6px 6px 0 #1A1A1A; padding: 24px; display: flex; flex-direction: column; gap: 14px; position: relative">
 <span class="display" style="font-size: 26px; color: #C8161D">★★★★★</span>
 <p style="margin: 0; font-size: 18px; line-height: 1.5">[Student review: add after your first demo classes]</p>
@@ -308,19 +332,18 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 
 <!-- STARTER KIT -->
 <section id="kit" style="max-width: 1180px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
-<div aria-hidden="true" style="flex: 1 1 300px; display: flex; justify-content: center">
+<div aria-hidden="true" class="m-hide" style="flex: 1 1 300px; display: flex; justify-content: center">
 <div style="width: 280px; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 12px; box-shadow: 10px 10px 0 #FFCE00; padding: 26px; display: flex; flex-direction: column; gap: 10px; transform: rotate(-4deg)">
 <span class="display" style="font-size: 30px; color: #C8161D">A1 Starter Kit</span>
-<span style="font-size: 15px; font-weight: 800">✓ 50 must-know words</span>
 <span style="font-size: 15px; font-weight: 800">✓ 10 survival phrases</span>
-<span style="font-size: 15px; font-weight: 800">✓ der/die/das cheat sheet</span>
-<span style="font-size: 15px; font-weight: 800">✓ A sample lesson plan</span>
-<span style="font-size: 13px; color: #555555">PDF · free</span>
+<span style="font-size: 15px; font-weight: 800">✓ 3 grammar cheat codes</span>
+<span style="font-size: 15px; font-weight: 800">✓ A fun first homework</span>
+<span style="font-size: 13px; color: #555555">by email · free</span>
 </div>
 </div>
 <div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
 <h2 class="display" style="margin: 0; font-size: 58px">Not ready yet? <span style="color: #C8161D">Grab the free Starter Kit</span></h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.5">A short PDF with the first words and phrases you need, a cheat sheet for der/die/das, and a sample lesson so you can see how my classes run. Leave your email and it lands in your inbox.</p>
+<p style="margin: 0; font-size: 19px; line-height: 1.5">10 survival phrases, 3 cheat codes for German grammar and a fun first homework. Leave your email and Brezi sends it to your inbox in a minute.</p>
 <form @submit.prevent="send('kit')" style="position: relative; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
 <div v-if="forms.kit.state !== 'sent'" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; width: 100%">
 <input v-model="forms.kit.website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px">

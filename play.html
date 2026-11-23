@@ -27,6 +27,30 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 .press{transition:transform .12s ease, box-shadow .12s ease;cursor:pointer}
 .press:hover{transform:translate(-2px,-2px)}
 .press:active{transform:translate(3px,3px)}
+@media (max-width: 640px){
+nav > div{padding:8px 14px !important;gap:6px !important}
+nav a.display{font-size:22px !important}
+.nav-links{flex-wrap:nowrap !important;overflow-x:auto;gap:14px !important;font-size:14px !important;width:100%;padding-bottom:4px}
+.nav-links a{white-space:nowrap;flex:none}
+.nav-links a.press{padding:6px 12px !important}
+section, header > div, section > div{padding-top:28px !important;padding-bottom:28px !important}
+[style*="font-size: 84px"],[style*="font-size: 80px"]{font-size:44px !important}
+[style*="font-size: 76px"],[style*="font-size: 72px"]{font-size:40px !important}
+[style*="font-size: 64px"],[style*="font-size: 60px"],[style*="font-size: 58px"]{font-size:34px !important}
+[style*="font-size: 54px"],[style*="font-size: 52px"],[style*="font-size: 48px"]{font-size:30px !important}
+[style*="font-size: 44px"],[style*="font-size: 40px"]{font-size:27px !important}
+[style*="font-size: 34px"],[style*="font-size: 32px"]{font-size:24px !important}
+[style*="font-size: 21px"],[style*="font-size: 20px"],[style*="font-size: 19px"]{font-size:16px !important}
+[style*="padding: 36px"],[style*="padding: 32px"],[style*="padding: 30px"],[style*="padding: 28px"]{padding:18px !important}
+[style*="gap: 48px"],[style*="gap: 40px"],[style*="gap: 36px"]{gap:18px !important}
+.m-hide{display:none !important}
+.m-2col{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important}
+.m-2col > *{padding:12px !important}
+.m-scroll{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+.m-scroll > *{flex:0 0 78%;scroll-snap-align:start}
+.hero-brezi{width:150px !important;height:130px !important}
+[style*="width: 380px"]{transform:scale(.86);transform-origin:top center;margin-bottom:-58px}
+}
 @media (prefers-reduced-motion: reduce){.bob,.eye,.ticker,.ticker-rev,.wiggle,.pop{animation:none}}
 </style>
 <style>[v-cloak]{display:none}html{scroll-behavior:smooth}</style>
@@ -39,7 +63,7 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <nav style="position: sticky; top: 0; z-index: 10; background: #FFCE00; border-bottom: 4px solid #1A1A1A">
 <div style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
 <a href="index.html" class="display" style="font-size: 30px; color: #1A1A1A; text-decoration: none">German <span style="color: #C8161D">with</span> Brezi <span style="font-family: 'Nunito', system-ui, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 0">by Sruthi</span></a>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; font-weight: 800; font-size: 16px">
+<div class="nav-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; font-weight: 800; font-size: 16px">
 <a href="index.html#course" style="color: #1A1A1A; text-decoration: none">Courses</a>
 <a href="index.html#about" style="color: #1A1A1A; text-decoration: none">About</a>
 <a href="#top" style="color: #1A1A1A; text-decoration: none">Play &amp; learn</a>
