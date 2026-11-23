@@ -27,13 +27,18 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 .press{transition:transform .12s ease, box-shadow .12s ease;cursor:pointer}
 .press:hover{transform:translate(-2px,-2px)}
 .press:active{transform:translate(3px,3px)}
-@keyframes walk{0%,12%{left:10%}22%,32%{left:30%}42%,52%{left:50%}62%,72%{left:70%}82%,100%{left:90%}}
-@keyframes step{0%,100%{transform:rotate(0)}50%{transform:rotate(14deg)}}
-@keyframes hop{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-6px)}}
-.walker{animation:walk 9s ease-in-out infinite}
-.walker-fig{display:block;animation:hop .45s ease-in-out infinite;transform:translate(-50%,0)}
-.leg-a{transform-origin:18px 46px;animation:step .45s ease-in-out infinite}
-.leg-b{transform-origin:28px 46px;animation:step .45s ease-in-out infinite reverse}
+@keyframes walk{0%{left:10%;opacity:0}3%{opacity:1}70%{left:90%}96%{left:90%;opacity:1}100%{left:90%;opacity:0}}
+@keyframes legs{0%{transform:rotate(0deg)}5%{transform:rotate(14deg)}10%{transform:rotate(-14deg)}15%{transform:rotate(14deg)}20%{transform:rotate(-14deg)}25%{transform:rotate(14deg)}30%{transform:rotate(-14deg)}35%{transform:rotate(14deg)}40%{transform:rotate(-14deg)}45%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}55%{transform:rotate(14deg)}60%{transform:rotate(-14deg)}65%{transform:rotate(14deg)}70%{transform:rotate(0deg)}100%{transform:rotate(0)}}
+@keyframes legs2{0%{transform:rotate(0deg)}5%{transform:rotate(-14deg)}10%{transform:rotate(14deg)}15%{transform:rotate(-14deg)}20%{transform:rotate(14deg)}25%{transform:rotate(-14deg)}30%{transform:rotate(14deg)}35%{transform:rotate(-14deg)}40%{transform:rotate(14deg)}45%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}55%{transform:rotate(-14deg)}60%{transform:rotate(14deg)}65%{transform:rotate(-14deg)}70%{transform:rotate(0deg)}100%{transform:rotate(0)}}
+@keyframes armsdown{0%,70%{opacity:1}72%,100%{opacity:0}}
+@keyframes armsup{0%,70%{opacity:0}72%,100%{opacity:1}}
+@keyframes sway{0%,100%{transform:translate(-50%,0) rotate(0)}25%{transform:translate(-50%,-1px) rotate(-2deg)}75%{transform:translate(-50%,-1px) rotate(2deg)}}
+.walker{animation:walk 10s linear infinite}
+.walker-fig{display:block;transform:translate(-50%,0);animation:sway .7s ease-in-out infinite}
+.leg-a{transform-origin:26px 60px;animation:legs 10s linear infinite}
+.leg-b{transform-origin:34px 60px;animation:legs2 10s linear infinite}
+.arms-down{animation:armsdown 10s linear infinite}
+.arms-up{opacity:0;animation:armsup 10s linear infinite}
 
 @keyframes pulse{0%{box-shadow:6px 6px 0 #1A1A1A,0 0 0 0 rgba(200,22,29,.55)}70%{box-shadow:6px 6px 0 #1A1A1A,0 0 0 16px rgba(200,22,29,0)}100%{box-shadow:6px 6px 0 #1A1A1A,0 0 0 0 rgba(200,22,29,0)}}
 .tap-pulse{animation:pulse 1.8s ease-out infinite}
@@ -68,10 +73,10 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 .m-chips{display:flex !important;flex-wrap:wrap;gap:8px !important}
 .m-chips .fact{padding:6px 12px !important;border-radius:999px !important;font-size:14px !important;border-width:2px !important}
 .m-only{display:block !important}
-.journey{padding:70px 6px 14px !important}
-.journey .road{top:96px !important;height:6px !important}
-.journey .walker{top:10px !important}
-.walker-fig{width:34px;height:46px}
+.journey{padding:72px 6px 14px !important}
+.journey .road{top:94px !important;height:5px !important;background:#1A1A1A !important;left:12% !important;right:12% !important}
+.journey .walker{top:6px !important}
+.walker-fig{width:38px;height:57px}
 .stop-icon{width:46px !important;height:46px !important;border-width:3px !important;box-shadow:2px 2px 0 #1A1A1A !important}
 .stop-icon svg{width:22px;height:22px}
 .stop-title{font-size:11px !important}
@@ -94,7 +99,7 @@ header#top, main section, #app > section, section[id]{scroll-snap-align:start}
 section{padding-top:18px !important;padding-bottom:18px !important}
 [style*="width: 380px"]{transform:scale(.86);transform-origin:top center;margin-bottom:-58px}
 }
-@media (prefers-reduced-motion: reduce){.walker,.walker-fig,.leg-a,.leg-b,.bob,.eye,.ticker,.ticker-rev,.wiggle,.pop{animation:none}}
+@media (prefers-reduced-motion: reduce){.walker,.walker-fig,.leg-a,.leg-b,.arms-down,.arms-up,.bob,.eye,.ticker,.ticker-rev,.wiggle,.pop{animation:none}}
 </style>
 <style>[v-cloak]{display:none}html{scroll-behavior:smooth}</style>
 </head>
@@ -184,17 +189,28 @@ section{padding-top:18px !important;padding-bottom:18px !important}
 <h2 class="display" style="margin: 0; font-size: 60px">Your German <span style="color: #C8161D">journey</span></h2>
 <div class="journey" style="position: relative; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #1A1A1A; padding: 104px 16px 24px">
 <div aria-hidden="true" class="road" style="position: absolute; left: 10%; right: 10%; top: 140px; height: 10px; background: repeating-linear-gradient(90deg, #1A1A1A 0 16px, transparent 16px 26px); border-radius: 5px"></div>
-<div aria-hidden="true" class="walker" style="position: absolute; top: 14px; left: 10%"><svg class="walker-fig" width="62" height="84" viewBox="0 0 46 62" aria-hidden="true">
-<path d="M14 6 C 6 10, 6 30, 12 38 L 34 38 C 40 30, 40 10, 32 6 Z" fill="#1A1A1A"></path>
-<circle cx="23" cy="15" r="10" fill="#B9774A" stroke="#1A1A1A" stroke-width="2"></circle>
-<path d="M13 13 C 15 4, 31 4, 33 13 C 28 9, 18 9, 13 13 Z" fill="#1A1A1A"></path>
-<circle cx="19.5" cy="16" r="1.6" fill="#1A1A1A"></circle><circle cx="26.5" cy="16" r="1.6" fill="#1A1A1A"></circle>
-<path d="M19.5 20 Q 23 23 26.5 20" fill="none" stroke="#1A1A1A" stroke-width="1.6" stroke-linecap="round"></path>
-<path d="M15 26 L 31 26 L 34 46 L 12 46 Z" fill="#E8692A" stroke="#1A1A1A" stroke-width="2"></path>
-<path d="M17 30 L 29 30 L 31 46 L 15 46 Z" fill="#1A1A1A"></path>
-<path class="leg-a" d="M18 46 L 16 58" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round"></path>
-<path class="leg-b" d="M28 46 L 30 58" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round"></path>
-<rect x="31" y="30" width="9" height="11" rx="1.5" fill="#FFCE00" stroke="#1A1A1A" stroke-width="2"></rect>
+<div aria-hidden="true" class="walker" style="position: absolute; top: 14px; left: 10%"><svg class="walker-fig" width="62" height="93" viewBox="0 0 60 90" aria-hidden="true">
+<g class="arms-up">
+<path d="M22 40 L 14 16" stroke="#B9774A" stroke-width="4" stroke-linecap="round"></path>
+<path d="M38 40 L 46 16" stroke="#B9774A" stroke-width="4" stroke-linecap="round"></path>
+<rect x="7" y="1" width="46" height="17" rx="2" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"></rect>
+<path d="M12 7 H 36 M12 12 H 30" stroke="#1A1A1A" stroke-width="1.6"></path>
+<circle cx="45" cy="10" r="4.5" fill="#C8161D" stroke="#1A1A1A" stroke-width="1.5"></circle>
+</g>
+<path d="M19 16 C 15 30, 16 44, 18 50 L 42 50 C 44 44, 45 30, 41 16 Z" fill="#1A1A1A"></path>
+<circle cx="30" cy="22" r="11" fill="#B9774A" stroke="#1A1A1A" stroke-width="2"></circle>
+<path d="M19 20 C 21 9, 39 9, 41 20 C 35 15, 25 15, 19 20 Z" fill="#1A1A1A"></path>
+<circle cx="26" cy="23" r="1.7" fill="#1A1A1A"></circle><circle cx="34" cy="23" r="1.7" fill="#1A1A1A"></circle>
+<path d="M26 27.5 Q 30 31 34 27.5" fill="none" stroke="#1A1A1A" stroke-width="1.6" stroke-linecap="round"></path>
+<path class="leg-a" d="M26 60 L 25 78 L 21 79" fill="none" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+<path class="leg-b" d="M34 60 L 35 78 L 39 79" fill="none" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M21 34 L 39 34 L 41 52 L 19 52 Z" fill="#E8692A" stroke="#1A1A1A" stroke-width="2"></path>
+<path d="M23.5 39 L 36.5 39 L 41 62 L 19 62 Z" fill="#1A1A1A"></path>
+<g class="arms-down">
+<path d="M21 37 L 16 53" stroke="#B9774A" stroke-width="4" stroke-linecap="round"></path>
+<path d="M39 37 L 44 53" stroke="#B9774A" stroke-width="4" stroke-linecap="round"></path>
+<rect x="41" y="44" width="11" height="13" rx="1.5" fill="#FFCE00" stroke="#1A1A1A" stroke-width="2"></rect>
+</g>
 </svg></div>
 <ol style="margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px">
 <li class="stop" style="list-style: none; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; position: relative; z-index: 1">
