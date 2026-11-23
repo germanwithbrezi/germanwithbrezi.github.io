@@ -632,7 +632,7 @@ class Component extends DCLogic {
   const store = PetiteVue.reactive({ s: comp.state });
   comp.state = store.s;
   // Backend: paste the Apps Script web app URL here (see ops repo docs/forms-setup.md).
-  const ENDPOINT = '';
+  const ENDPOINT = 'https://script.google.com/macros/s/AKfycbyxQpXjw1IgLUvASKZyuzHz5bUDpyA3GuVN3Amyxg7y3akp8yoEUFoJALXriXrMVHgvmg/exec';
   PetiteVue.createApp({
     get v() { return comp.renderVals(); },
     forms: {
