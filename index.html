@@ -27,6 +27,7 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 .press{transition:transform .12s ease, box-shadow .12s ease;cursor:pointer}
 .press:hover{transform:translate(-2px,-2px)}
 .press:active{transform:translate(3px,3px)}
+.m-only{display:none}
 @media (max-width: 640px){
 nav > div{padding:8px 14px !important;gap:6px !important}
 nav a.display{font-size:22px !important}
@@ -48,7 +49,17 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 .m-2col > *{padding:12px !important}
 .m-scroll{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
 .m-scroll > *{flex:0 0 78%;scroll-snap-align:start}
-.hero-brezi{width:150px !important;height:130px !important}
+.hero-wrap{position:relative}
+.hero-h1{font-size:36px !important;margin-right:124px !important}
+.hero-mascot{position:absolute;top:58px;right:10px;width:120px;gap:4px !important}
+.hero-mascot button{font-size:17px !important;padding:5px 10px !important;border-width:3px !important;box-shadow:3px 3px 0 #1A1A1A !important;border-radius:16px !important}
+.hero-brezi{width:112px !important;height:98px !important}
+.how-num{width:34px !important;height:34px !important;font-size:20px !important}
+.m-chips{display:flex !important;flex-wrap:wrap;gap:8px !important}
+.m-chips .fact{padding:6px 12px !important;border-radius:999px !important;font-size:14px !important;border-width:2px !important}
+.m-only{display:block !important}
+[style*="gap: 28px"],[style*="gap: 26px"],[style*="gap: 24px"]{gap:14px !important}
+section{padding-top:18px !important;padding-bottom:18px !important}
 [style*="width: 380px"]{transform:scale(.86);transform-origin:top center;margin-bottom:-58px}
 }
 @media (prefers-reduced-motion: reduce){.bob,.eye,.ticker,.ticker-rev,.wiggle,.pop{animation:none}}
@@ -75,16 +86,16 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 
 <!-- HERO -->
 <header id="top" class="halftone" style="background-color: #FFF6CC; border-bottom: 4px solid #1A1A1A">
-<div style="max-width: 1180px; margin: 0 auto; padding: 64px 24px 72px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+<div class="hero-wrap" style="max-width: 1180px; margin: 0 auto; padding: 64px 24px 72px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
 <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
 <span style="align-self: flex-start; background: #1A1A1A; color: #FFCE00; font-weight: 800; padding: 6px 14px; border-radius: 6px; font-size: 15px; transform: rotate(-2deg)">GERMAN A1 · A2 · ONLINE · FROM ZERO</span>
-<h1 class="display" style="margin: 0; font-size: 84px; line-height: 0.95">Learn German.<br><span style="color: #C8161D">Laugh a little.</span><br>Pass A1 &amp; A2.</h1>
+<h1 class="display hero-h1" style="margin: 0; font-size: 84px; line-height: 0.95">Learn German.<br><span style="color: #C8161D">Laugh a little.</span><br>Pass A1 &amp; A2.</h1>
 <p style="margin: 0; font-size: 21px; line-height: 1.5; max-width: 560px">Not your usual German class. We laugh, we play, we learn, and you use it from day one. Small live A1 &amp; A2 batches, taught in English by a teacher who lives in Germany.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 14px">
 <a href="#book" class="press" style="background: #C8161D; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 18px; padding: 16px 26px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Book a free demo class</a>
 <a href="play.html" class="press" style="background: #FFFFFF; color: #1A1A1A; text-decoration: none; font-weight: 800; font-size: 18px; padding: 16px 26px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Play der · die · das</a>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 10px; font-size: 15px; font-weight: 800">
+<div class="m-hide" style="display: flex; flex-wrap: wrap; gap: 10px; font-size: 15px; font-weight: 800">
 <span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 14px">Live on Zoom</span>
 <span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 14px">5–8 learners per batch</span>
 <span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 14px">Goethe / telc exam prep</span>
@@ -98,9 +109,9 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 <span style="font-weight: 800; font-size: 18px">Find your batch →</span>
 </a>
 </div>
-<div style="flex: 1 1 340px; display: flex; flex-direction: column; align-items: center; gap: 8px">
+<div class="hero-mascot" style="flex: 1 1 340px; display: flex; flex-direction: column; align-items: center; gap: 8px">
 <button class="press" @click="v.nextGreeting" aria-label="Make Brezi say another German greeting" style="background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 28px; padding: 18px 30px; box-shadow: 6px 6px 0 #1A1A1A; font-family: 'Bangers', system-ui, sans-serif; font-size: 48px; letter-spacing: 1.5px; color: #1A1A1A; position: relative">{{ v.greeting }}</button>
-<span style="font-size: 14px; font-weight: 600">tap the bubble</span>
+<span class="m-hide" style="font-size: 14px; font-weight: 600">tap the bubble</span>
 <svg class="bob hero-brezi" width="300" height="260" viewBox="0 0 220 190" aria-hidden="true">
 <path d="M110 160 C 45 160, 22 98, 52 64 C 82 30, 128 66, 110 104 C 92 66, 138 30, 168 64 C 198 98, 175 160, 110 160 Z" fill="none" stroke="#1A1A1A" stroke-width="30" stroke-linejoin="round"></path>
 <path d="M110 160 C 45 160, 22 98, 52 64 C 82 30, 128 66, 110 104 C 92 66, 138 30, 168 64 C 198 98, 175 160, 110 160 Z" fill="none" stroke="#C9813F" stroke-width="22" stroke-linejoin="round"></path>
@@ -115,7 +126,7 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 <circle cx="86" cy="142" r="5" fill="#F08A8A"></circle>
 <circle cx="134" cy="142" r="5" fill="#F08A8A"></circle>
 </svg>
-<span class="display" style="font-size: 26px">Meet Brezi, your pretzel buddy</span>
+<span class="display m-hide" style="font-size: 26px">Meet Brezi, your pretzel buddy</span>
 </div>
 </div>
 </header>
@@ -141,24 +152,24 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 <h2 class="display" style="margin: 0; font-size: 60px">How the online class <span style="color: #C8161D">works</span></h2>
 <div class="m-2col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
 <div style="background: #FFF6CC; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
-<span class="display" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">1</span>
+<span class="display how-num" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">1</span>
 <strong style="font-size: 20px">Free demo class</strong>
-<span style="font-size: 16px; line-height: 1.5">30 minutes on Zoom. Meet me, tell me your plans, and try a mini-lesson.</span>
+<span class="m-hide" style="font-size: 16px; line-height: 1.5">30 minutes on Zoom. Meet me, tell me your plans, and try a mini-lesson.</span>
 </div>
 <div style="background: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
-<span class="display" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">2</span>
+<span class="display how-num" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">2</span>
 <strong style="font-size: 20px">Live classes on Zoom</strong>
-<span style="font-size: 16px; line-height: 1.5">5–8 learners, 3 classes a week, lots of speaking in small breakout rooms.</span>
+<span class="m-hide" style="font-size: 16px; line-height: 1.5">5–8 learners, 3 classes a week, lots of speaking in small breakout rooms.</span>
 </div>
 <div style="background: #FFE3E3; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
-<span class="display" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">3</span>
+<span class="display how-num" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">3</span>
 <strong style="font-size: 20px">Practise between classes</strong>
-<span style="font-size: 16px; line-height: 1.5">Homework in Google Classroom. Missed a class? Watch the recording.</span>
+<span class="m-hide" style="font-size: 16px; line-height: 1.5">Homework in Google Classroom. Missed a class? Watch the recording.</span>
 </div>
 <div style="background: #E6F6EC; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
-<span class="display" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">4</span>
+<span class="display how-num" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">4</span>
 <strong style="font-size: 20px">Mock exams → certificate</strong>
-<span style="font-size: 16px; line-height: 1.5">Timed Goethe/telc practice tests, then you book the real exam with confidence.</span>
+<span class="m-hide" style="font-size: 16px; line-height: 1.5">Timed Goethe/telc practice tests, then you book the real exam with confidence.</span>
 </div>
 </div>
 </section>
@@ -195,16 +206,17 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 <button class="press" @click="l.pick" :disabled="l.disabled" :aria-pressed="l.active" :style="l.style">{{ l.label }}</button>
 </template>
 </div>
-<span style="font-size: 15px; font-weight: 800">Evening &amp; weekend batches · times in IST</span>
+<span class="m-hide" style="font-size: 15px; font-weight: 800">Evening &amp; weekend batches · times in IST</span>
 </div>
 <h2 class="display" style="margin: 0; font-size: 58px">{{ v.course.title }}</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.5">{{ v.course.lead }}</p>
-<div class="m-2col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; font-size: 16px">
+<p class="m-hide" style="margin: 0; font-size: 18px; line-height: 1.5">{{ v.course.lead }}</p>
+<div class="m-chips" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; font-size: 16px">
 <template v-for="(it, $index) in v.course.items">
-<div :style="it.style"><strong>{{ it.head }}</strong><br>{{ it.text }}</div>
+<div class="fact" :style="it.style"><strong>{{ it.head }}</strong><span class="m-hide"><br>{{ it.text }}</span></div>
 </template>
 </div>
-<div style="display: flex; flex-direction: column; gap: 10px">
+<p class="m-only" style="margin: 0; font-size: 16px; line-height: 1.5; background: #FFF6CC; border: 3px solid #1A1A1A; border-radius: 12px; padding: 10px 12px"><strong>Batches:</strong> evenings (Mon · Wed · Fri) or weekends · a new batch every month</p>
+<div class="m-hide" style="display: flex; flex-direction: column; gap: 10px">
 <span class="display" style="font-size: 30px">Next {{ v.course.short }} batches</span>
 <template v-for="(b, $index) in v.course.batches">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; background: #FFF6CC; border: 3px solid #1A1A1A; border-radius: 14px; padding: 14px 18px">
@@ -221,7 +233,7 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 <span class="display" style="font-size: 64px; line-height: 1; color: #C8161D">₹9,000</span>
 <span style="font-size: 16px">per level · or 3 × ₹3,000</span>
 </div>
-<a href="#book" class="press" style="background: #C8161D; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 18px; padding: 16px 26px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Join the waitlist</a>
+<a href="#book" class="press" style="background: #C8161D; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 18px; padding: 16px 26px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Reserve my seat</a>
 </div>
 </div>
 </section>
@@ -242,31 +254,13 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-size: 14px; font-weight: 800">
 <span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 12px">Lives in Germany</span>
 <span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 12px">B1 · studying B2</span>
-<a href="#languages" style="background: #1A1A1A; color: #FFCE00; text-decoration: none; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 12px">Speaks 5 languages →</a>
 </div>
+<p style="margin: 0; font-size: 16px; line-height: 1.5"><strong>I can explain in:</strong> Deutsch · English · తెలుగు · தமிழ் · हिन्दी</p>
 </div>
 <div style="flex: 1 1 300px; background: #1A1A1A; color: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #FFCE00; padding: 30px; display: flex; flex-direction: column; gap: 14px">
 <span class="display" style="font-size: 40px; color: #FFCE00">Why a pretzel?</span>
-<p style="margin: 0; font-size: 17px; line-height: 1.6">Legend says a monk baked the first pretzel around 1610 as a treat to keep his students motivated to learn. Brezi carries on that job: show up, learn a little, earn your Brezel.</p>
-<p style="margin: 0; font-size: 17px; line-height: 1.6">And your first German word is already done: <strong style="color: #FFCE00">die Brezel</strong> = the pretzel.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6">Legend says a monk baked the first pretzel around 1610 to motivate his students to learn. Brezi does the same job: show up, learn a little, earn your <strong style="color: #FFCE00">Brezel</strong> (= pretzel).</p>
 </div>
-</div>
-</section>
-
-<!-- LANGUAGES -->
-<section id="languages" style="max-width: 1180px; margin: 0 auto; padding: 30px 24px 60px; display: flex; flex-direction: column; gap: 24px">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<h2 class="display" style="margin: 0; font-size: 60px">One teacher. <span style="color: #C8161D">Five languages.</span></h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.5">Classes run in English. If a grammar point just won't click, I can explain it in your language. Tap one.</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 12px">
-<template v-for="(lg, $index) in v.langs">
-<button class="press" @click="lg.pick" :aria-pressed="lg.active" :style="lg.style">{{ lg.name }}</button>
-</template>
-</div>
-<div class="halftone" style="background-color: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #1A1A1A; padding: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 28px">
-<div class="wiggle" style="background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 28px; padding: 18px 28px; font-size: 44px; font-weight: 800">{{ v.lang.hello }}</div>
-<p style="margin: 0; flex: 1 1 320px; font-size: 26px; font-weight: 800; line-height: 1.4">{{ v.lang.line }}</p>
 </div>
 </section>
 
@@ -284,28 +278,6 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 </div>
 </section>
 
-<!-- REVIEWS -->
-<section id="reviews" style="max-width: 1180px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 24px">
-<h2 class="display" style="margin: 0; font-size: 60px">What students <span style="color: #C8161D">say</span></h2>
-<div class="m-scroll" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px">
-<div style="background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 22px; box-shadow: 6px 6px 0 #1A1A1A; padding: 24px; display: flex; flex-direction: column; gap: 14px; position: relative">
-<span class="display" style="font-size: 26px; color: #C8161D">★★★★★</span>
-<p style="margin: 0; font-size: 18px; line-height: 1.5">[Student review: add after your first demo classes]</p>
-<span style="font-weight: 800">[Name] · [City] · [A1 / A2]</span>
-</div>
-<div style="background: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 22px; box-shadow: 6px 6px 0 #1A1A1A; padding: 24px; display: flex; flex-direction: column; gap: 14px; transform: rotate(1deg)">
-<span class="display" style="font-size: 26px; color: #C8161D">★★★★★</span>
-<p style="margin: 0; font-size: 18px; line-height: 1.5">[Student review: add after your first demo classes]</p>
-<span style="font-weight: 800">[Name] · [City] · [A1 / A2]</span>
-</div>
-<div style="background: #FFE3E3; border: 4px solid #1A1A1A; border-radius: 22px; box-shadow: 6px 6px 0 #1A1A1A; padding: 24px; display: flex; flex-direction: column; gap: 14px; transform: rotate(-1deg)">
-<span class="display" style="font-size: 26px; color: #C8161D">★★★★★</span>
-<p style="margin: 0; font-size: 18px; line-height: 1.5">[Student review: add after your first demo classes]</p>
-<span style="font-weight: 800">[Name] · [City] · [A1 / A2]</span>
-</div>
-</div>
-</section>
-
 <!-- QUESTIONS -->
 <section id="questions" style="max-width: 1180px; margin: 0 auto; padding: 80px 24px 40px; display: flex; flex-direction: column; gap: 28px">
 <div style="display: flex; flex-direction: column; gap: 8px">
@@ -314,7 +286,7 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; align-items: start">
 <template v-for="(q, $index) in v.questions">
-<div :style="q.cardStyle">
+<div :class="q.extra" :style="q.cardStyle">
 <button class="press" @click="q.toggle" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; background: transparent; border: 0; padding: 20px 22px; text-align: left; font-family: 'Nunito', system-ui, sans-serif; font-size: 20px; font-weight: 800; color: #1A1A1A">
 <span>{{ q.title }}</span>
 <span class="display" style="flex: none; width: 42px; height: 42px; border: 3px solid #1A1A1A; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 30px">{{ q.sign }}</span>
@@ -328,6 +300,7 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 </div>
 </template>
 </div>
+<button v-if="!v.allQ" class="press m-only" @click="v.showAllQ" style="align-self: flex-start; background: #FFFFFF; border: 3px solid #1A1A1A; border-radius: 12px; box-shadow: 3px 3px 0 #1A1A1A; padding: 10px 18px; font-family: Nunito, system-ui, sans-serif; font-size: 16px; font-weight: 800; color: #1A1A1A">More questions ↓</button>
 </section>
 
 <!-- STARTER KIT -->
@@ -343,7 +316,7 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 </div>
 <div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
 <h2 class="display" style="margin: 0; font-size: 58px">Not ready yet? <span style="color: #C8161D">Grab the free Starter Kit</span></h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.5">10 survival phrases, 3 cheat codes for German grammar and a fun first homework. Leave your email and Brezi sends it to your inbox in a minute.</p>
+<p style="margin: 0; font-size: 19px; line-height: 1.5">10 survival phrases + 3 grammar cheat codes, straight to your inbox.</p>
 <form @submit.prevent="send('kit')" style="position: relative; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
 <div v-if="forms.kit.state !== 'sent'" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; width: 100%">
 <input v-model="forms.kit.website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px">
@@ -441,9 +414,10 @@ class Component extends DCLogic {
       { id: 'zero', title: 'I know zero German. Is that OK?', answer: 'Perfect, actually. A1 starts from "Hallo". Everything is explained in English, step by step.', more: 'Try the der/die/das game', href: 'play.html', bg: '#FFF6CC' },
       { id: 'lang', title: 'Can I join A2 directly?', answer: 'Yes, if you passed A1 or already know the A1 basics. Book a free demo class and I will check your level in 10 minutes.', more: 'Book a free demo', href: '#book', bg: '#DFF1FF' }
     ];
-    const questions = qs.map((q) => {
+    const questions = qs.map((q, qi) => {
       const open = s.openQ === q.id;
       return {
+        extra: qi >= 3 && !s.allQ ? 'm-hide' : '',
         title: q.title, answer: q.answer, more: q.more, href: q.href, open: open,
         sign: open ? '–' : '+',
         cardStyle: 'background: ' + (open ? q.bg : '#FFFFFF') + '; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: ' + (open ? '8px 8px 0 #C8161D' : '6px 6px 0 #1A1A1A') + '; overflow: hidden',
@@ -640,7 +614,7 @@ class Component extends DCLogic {
         this.speak(greetings[n % greetings.length]);
       },
       tickerItems: tick.concat(tick), tickerItems2: tick2.concat(tick2),
-      questions: questions,
+      questions: questions, allQ: !!s.allQ, showAllQ: () => this.setState({ allQ: true }),
       word: cur.w, wordEn: cur.en,
       wordNo: (s.gameIdx % words.length) + 1, wordCount: words.length,
       options: options, feedback: feedback, answered: s.answered,
