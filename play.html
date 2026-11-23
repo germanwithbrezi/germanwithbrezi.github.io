@@ -27,6 +27,8 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 .press{transition:transform .12s ease, box-shadow .12s ease;cursor:pointer}
 .press:hover{transform:translate(-2px,-2px)}
 .press:active{transform:translate(3px,3px)}
+@keyframes flipin{0%{transform:perspective(600px) rotateY(90deg)}100%{transform:perspective(600px) rotateY(0)}}
+.flipcard{animation:flipin .35s ease-out}
 @media (max-width: 640px){
 nav > div{padding:8px 14px !important;gap:6px !important}
 nav a.display{font-size:22px !important}
@@ -44,6 +46,9 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 [style*="padding: 36px"],[style*="padding: 32px"],[style*="padding: 30px"],[style*="padding: 28px"]{padding:18px !important}
 [style*="gap: 48px"],[style*="gap: 40px"],[style*="gap: 36px"]{gap:18px !important}
 .m-hide{display:none !important}
+html{scroll-snap-type:y proximity;scroll-padding-top:64px}
+section[id]{scroll-snap-align:start}
+.flipcard{min-height:110px !important}
 .m-2col{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important}
 .m-2col > *{padding:12px !important}
 .m-scroll{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
@@ -75,46 +80,46 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 
 <!-- PLAY HEADER -->
 <header class="halftone" style="background-color: #FFF6CC; border-bottom: 4px solid #1A1A1A">
-<div style="max-width: 1180px; margin: 0 auto; padding: 56px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 28px 24px; display: flex; flex-direction: column; gap: 8px">
 <a href="index.html" style="font-weight: 800">← Back to home</a>
-<h1 class="display" style="margin: 0; font-size: 80px; line-height: 0.95">Play &amp; <span style="color: #C8161D">learn</span></h1>
-<p style="margin: 0; font-size: 20px; max-width: 620px; line-height: 1.5">Four quick games: grammar bites, der · die · das, flip words and the spin-the-wheel quiz. New ones every week.</p>
+<h1 class="display" style="margin: 0; font-size: 60px; line-height: 0.95">Play &amp; <span style="color: #C8161D">learn</span></h1>
+<p style="margin: 0; font-size: 18px; max-width: 620px; line-height: 1.5">Four quick games: grammar bites, der · die · das, flip words and the spin-the-wheel quiz. New ones every week.</p>
 </div>
 </header>
 
 <!-- GRAMMAR COMIC -->
-<section id="grammar" style="max-width: 1180px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 24px">
-<h2 class="display" style="margin: 0; font-size: 52px">Grammar bite #1: <span style="color: #C8161D">the verb loves seat 2</span></h2>
+<section id="grammar" style="max-width: 1180px; margin: 0 auto; padding: 32px 24px 16px; display: flex; flex-direction: column; gap: 16px">
+<h2 class="display" style="margin: 0; font-size: 44px">Grammar bite #1: <span style="color: #C8161D">the verb loves seat 2</span></h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
-<div class="halftone" style="background-color: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: 6px 6px 0 #1A1A1A; padding: 24px; display: flex; flex-direction: column; gap: 16px; min-height: 230px">
+<div class="halftone" style="background-color: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: 6px 6px 0 #1A1A1A; padding: 18px; display: flex; flex-direction: column; gap: 10px">
 <span class="display" style="font-size: 22px">Panel 1</span>
 <div style="align-self: flex-start; background: #FFFFFF; border: 3px solid #1A1A1A; border-radius: 22px; padding: 14px 18px; font-size: 22px; font-weight: 800">Ich <span style="background: #FFCE00; padding: 0 6px; border-radius: 6px">lerne</span> Deutsch.</div>
 <p style="margin: 0; font-size: 16px">I learn German. Verb in seat 2.</p>
 </div>
-<div class="halftone" style="background-color: #FFE3E3; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: 6px 6px 0 #1A1A1A; padding: 24px; display: flex; flex-direction: column; gap: 16px; min-height: 230px">
+<div class="halftone" style="background-color: #FFE3E3; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: 6px 6px 0 #1A1A1A; padding: 18px; display: flex; flex-direction: column; gap: 10px">
 <span class="display" style="font-size: 22px">Panel 2</span>
 <div style="align-self: flex-start; background: #FFFFFF; border: 3px solid #1A1A1A; border-radius: 22px; padding: 14px 18px; font-size: 22px; font-weight: 800">Heute <span style="background: #FFCE00; padding: 0 6px; border-radius: 6px">lerne</span> ich Deutsch.</div>
 <p style="margin: 0; font-size: 16px">Today I learn German. "Heute" took seat 1, so "ich" moves back. The verb doesn't budge.</p>
 </div>
-<div class="halftone" style="background-color: #FFF6CC; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: 6px 6px 0 #1A1A1A; padding: 24px; display: flex; flex-direction: column; gap: 16px; min-height: 230px">
+<div class="halftone" style="background-color: #FFF6CC; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: 6px 6px 0 #1A1A1A; padding: 18px; display: flex; flex-direction: column; gap: 10px">
 <span class="display" style="font-size: 22px">Panel 3</span>
 <div class="wiggle" style="align-self: flex-start; background: #1A1A1A; color: #FFCE00; border-radius: 22px; padding: 14px 18px; font-size: 20px; font-weight: 800">Brezi says: seat 2 is reserved. Like a train ticket!</div>
-<p style="margin: 0; font-size: 16px">One rule, hundreds of sentences. More grammar bites every week on Instagram.</p>
+<p style="margin: 0; font-size: 16px">One rule, hundreds of sentences. More grammar bites coming every week.</p>
 </div>
 </div>
 </section>
 
 <!-- GAME -->
-<section id="game" style="background: #1A1A1A; color: #FFFFFF; border-top: 4px solid #1A1A1A; border-bottom: 4px solid #1A1A1A; margin-top: 40px">
-<div style="max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+<section id="game" style="background: #1A1A1A; color: #FFFFFF; border-top: 4px solid #1A1A1A; border-bottom: 4px solid #1A1A1A; margin-top: 16px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
 <div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 14px">
-<h2 class="display" style="margin: 0; font-size: 64px; color: #FFCE00">der · die · das</h2>
+<h2 class="display" style="margin: 0; font-size: 52px; color: #FFCE00">der · die · das</h2>
 <p style="margin: 0; font-size: 19px; line-height: 1.5">Every German noun has an article. Can you guess which one? Tap your answer.</p>
 <span class="display" style="font-size: 30px">Score: {{ v.score }} / {{ v.tries }}</span>
 </div>
 <div style="flex: 999 1 520px; min-width: 0; background: #FFFFFF; color: #1A1A1A; border: 4px solid #FFCE00; border-radius: 24px; box-shadow: 8px 8px 0 #C8161D; padding: 32px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center">
 <span style="font-size: 16px; font-weight: 800; color: #555555">WORD {{ v.wordNo }} OF {{ v.wordCount }}</span>
-<span class="display" style="font-size: 76px; line-height: 1">{{ v.word }}</span>
+<span class="display" style="font-size: 60px; line-height: 1">{{ v.word }}</span>
 <span style="font-size: 18px">({{ v.wordEn }})</span>
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px">
 <template v-for="(o, $index) in v.options">
@@ -133,19 +138,20 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 
 
 <!-- WORDS -->
-<section id="words" style="max-width: 1180px; margin: 0 auto; padding: 80px 24px 40px; display: flex; flex-direction: column; gap: 26px">
+<section id="words" style="max-width: 1180px; margin: 0 auto; padding: 36px 24px 32px; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-direction: column; gap: 8px">
-<h2 class="display" style="margin: 0; font-size: 60px">Flip a word. <span style="color: #C8161D">Hear it.</span></h2>
-<p style="margin: 0; font-size: 19px">Tap a card to flip it. Tap the speaker to hear the German.</p>
+<h2 class="display" style="margin: 0; font-size: 44px">Flip a word. <span style="color: #C8161D">Hear it.</span></h2>
+<p style="margin: 0; font-size: 17px">Tap a card to see the English. Tap 🔊 to hear the German.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+<div class="m-2col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px">
 <template v-for="(c, $index) in v.cards">
-<div :style="c.style">
-<button class="press" @click="c.flip" style="background: transparent; border: 0; padding: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; color: inherit; font-family: 'Nunito', system-ui, sans-serif">
+<div class="flipcard" :key="c.key" @click="c.flip" :style="c.style">
+<button class="press" aria-label="Flip card" style="background: transparent; border: 0; padding: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; color: inherit; font-family: 'Nunito', system-ui, sans-serif">
 <span style="font-size: 13px; font-weight: 800; letter-spacing: 1px">{{ c.side }}</span>
-<span class="display" style="font-size: 40px; line-height: 1.05; text-align: center">{{ c.shown }}</span>
+<span class="display" style="font-size: 28px; line-height: 1.05; text-align: center; overflow-wrap: anywhere; hyphens: auto" lang="de">{{ c.shown }}</span>
+<span style="font-size: 12px; font-weight: 800; opacity: 0.7">↻ tap to flip</span>
 </button>
-<button class="press" @click="c.speak" :aria-label="c.speakLabel" style="width: 48px; height: 48px; border: 3px solid #1A1A1A; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 0">
+<button class="press" @click.stop="c.speak" :aria-label="c.speakLabel" style="width: 42px; height: 42px; border: 3px solid #1A1A1A; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 0">
 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a10 10 0 0 1 0 14"></path></svg>
 </button>
 </div>
@@ -155,7 +161,7 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 
 <!-- SPIN QUIZ -->
 <section id="quiz" class="halftone" style="background-color: #FFF6CC; border-top: 4px solid #1A1A1A; border-bottom: 4px solid #1A1A1A; margin-top: 0">
-<div style="max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
 <div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px">
 <h2 class="display" style="margin: 0; font-size: 64px; line-height: 1">Spin the wheel. <span style="color: #C8161D">Test yourself.</span></h2>
 <p style="margin: 0; font-size: 19px; line-height: 1.5">Spin 5 times and answer whatever the wheel lands on. How many can you get right?</p>
@@ -213,8 +219,8 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 </section>
 
 <!-- CTA -->
-<section class="halftone" style="background-color: #C8161D; border-top: 4px solid #1A1A1A; margin-top: 60px">
-<div style="max-width: 1180px; margin: 0 auto; padding: 64px 24px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; color: #FFFFFF">
+<section class="halftone" style="background-color: #C8161D; border-top: 4px solid #1A1A1A; margin-top: 0">
+<div style="max-width: 1180px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; color: #FFFFFF">
 <h2 class="display" style="margin: 0; font-size: 64px; line-height: 1">Liked that? Try a real class.</h2>
 <a href="index.html" class="press" style="background: #FFCE00; color: #1A1A1A; text-decoration: none; font-weight: 800; font-size: 20px; padding: 16px 28px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">See courses and book a free demo</a>
 </div>
@@ -302,7 +308,7 @@ class Component extends DCLogic {
     const cardData = [
       { de: 'Hallo', en: 'Hello', bg: '#FFF6CC' }, { de: 'Danke', en: 'Thank you', bg: '#DFF1FF' },
       { de: 'Tschüss', en: 'Bye', bg: '#FFE3E3' }, { de: 'Wie geht’s?', en: 'How are you?', bg: '#E6F6EC' },
-      { de: 'Ich heiße …', en: 'My name is …', bg: '#DFF1FF' }, { de: 'das Krankenhaus', en: 'the hospital', bg: '#FFF6CC' }
+      { de: 'Ich heiße …', en: 'My name is …', bg: '#DFF1FF' }, { de: 'Krankenhaus', en: 'hospital', bg: '#FFF6CC' }
     ];
     const cards = cardData.map((c, i) => {
       const f = !!s.flipped[i];
@@ -310,9 +316,9 @@ class Component extends DCLogic {
         shown: f ? c.en : c.de,
         side: f ? 'ENGLISH' : 'DEUTSCH',
         speakLabel: 'Hear ' + c.de + ' in German',
-        style: 'background: ' + (f ? '#1A1A1A' : c.bg) + '; color: ' + (f ? '#FFCE00' : '#1A1A1A') + '; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: 6px 6px 0 ' + (f ? '#C8161D' : '#1A1A1A') + '; padding: 26px 18px 18px; min-height: 170px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 12px',
+        style: 'background: ' + (f ? '#1A1A1A' : c.bg) + '; color: ' + (f ? '#FFCE00' : '#1A1A1A') + '; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: 6px 6px 0 ' + (f ? '#C8161D' : '#1A1A1A') + '; padding: 16px 12px 12px; min-height: 130px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 12px',
         flip: () => { const n = Object.assign({}, this.state.flipped); n[i] = !n[i]; this.setState({ flipped: n }); },
-        speak: () => this.speak(c.de)
+        speak: () => this.speak(c.de), key: i + (f ? 'en' : 'de')
       };
     });
     const tick = ['Hallo', 'Danke', 'Bitte', 'Tschüss', 'Guten Morgen', 'Guten Abend', 'Kaffee', 'Brezel', 'Wunderbar', 'Prost', 'Gemütlich', 'Feierabend', 'Genau', 'Entschuldigung', 'Lecker', 'Willkommen', 'Bahnhof', 'Freund', 'Sonne', 'Kuchen', 'Wasser', 'Brot', 'Super', 'Schön', 'Fernweh', 'Stadt', 'Zug', 'Apfel', 'Ja', 'Nein'];
