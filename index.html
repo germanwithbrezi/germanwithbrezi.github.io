@@ -27,18 +27,18 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 .press{transition:transform .12s ease, box-shadow .12s ease;cursor:pointer}
 .press:hover{transform:translate(-2px,-2px)}
 .press:active{transform:translate(3px,3px)}
-@keyframes walk{0%{left:10%;opacity:0}3%{opacity:1}70%{left:90%}96%{left:90%;opacity:1}100%{left:90%;opacity:0}}
-@keyframes legs{0%{transform:rotate(0deg)}5%{transform:rotate(14deg)}10%{transform:rotate(-14deg)}15%{transform:rotate(14deg)}20%{transform:rotate(-14deg)}25%{transform:rotate(14deg)}30%{transform:rotate(-14deg)}35%{transform:rotate(14deg)}40%{transform:rotate(-14deg)}45%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}55%{transform:rotate(14deg)}60%{transform:rotate(-14deg)}65%{transform:rotate(14deg)}70%{transform:rotate(0deg)}100%{transform:rotate(0)}}
-@keyframes legs2{0%{transform:rotate(0deg)}5%{transform:rotate(-14deg)}10%{transform:rotate(14deg)}15%{transform:rotate(-14deg)}20%{transform:rotate(14deg)}25%{transform:rotate(-14deg)}30%{transform:rotate(14deg)}35%{transform:rotate(-14deg)}40%{transform:rotate(14deg)}45%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}55%{transform:rotate(-14deg)}60%{transform:rotate(14deg)}65%{transform:rotate(-14deg)}70%{transform:rotate(0deg)}100%{transform:rotate(0)}}
-@keyframes armsdown{0%,70%{opacity:1}72%,100%{opacity:0}}
-@keyframes armsup{0%,70%{opacity:0}72%,100%{opacity:1}}
+@keyframes walk{0%{left:10%;opacity:0}2.5%{left:10%;opacity:1}6.67%{left:10%}16.67%{left:30%}23.33%{left:30%}33.33%{left:50%}40.0%{left:50%}50.0%{left:70%}56.67%{left:70%}66.67%{left:90%}95.83%{left:90%;opacity:1}100%{left:90%;opacity:0}}
+@keyframes legs{0%{transform:rotate(0)}6.67%{transform:rotate(0)}9.17%{transform:rotate(14deg)}11.67%{transform:rotate(-14deg)}14.17%{transform:rotate(14deg)}16.67%{transform:rotate(0)}23.33%{transform:rotate(0)}25.83%{transform:rotate(14deg)}28.33%{transform:rotate(-14deg)}30.83%{transform:rotate(14deg)}33.33%{transform:rotate(0)}40.0%{transform:rotate(0)}42.5%{transform:rotate(14deg)}45.0%{transform:rotate(-14deg)}47.5%{transform:rotate(14deg)}50.0%{transform:rotate(0)}56.67%{transform:rotate(0)}59.17%{transform:rotate(14deg)}61.67%{transform:rotate(-14deg)}64.17%{transform:rotate(14deg)}66.67%{transform:rotate(0)}100%{transform:rotate(0)}}
+@keyframes legs2{0%{transform:rotate(0)}6.67%{transform:rotate(0)}9.17%{transform:rotate(-14deg)}11.67%{transform:rotate(14deg)}14.17%{transform:rotate(-14deg)}16.67%{transform:rotate(0)}23.33%{transform:rotate(0)}25.83%{transform:rotate(-14deg)}28.33%{transform:rotate(14deg)}30.83%{transform:rotate(-14deg)}33.33%{transform:rotate(0)}40.0%{transform:rotate(0)}42.5%{transform:rotate(-14deg)}45.0%{transform:rotate(14deg)}47.5%{transform:rotate(-14deg)}50.0%{transform:rotate(0)}56.67%{transform:rotate(0)}59.17%{transform:rotate(-14deg)}61.67%{transform:rotate(14deg)}64.17%{transform:rotate(-14deg)}66.67%{transform:rotate(0)}100%{transform:rotate(0)}}
+@keyframes armsdown{0%,66.67%{opacity:1}68.33%,100%{opacity:0}}
+@keyframes armsup{0%,66.67%{opacity:0}68.33%,100%{opacity:1}}
 @keyframes sway{0%,100%{transform:translate(-50%,0) rotate(0)}25%{transform:translate(-50%,-1px) rotate(-2deg)}75%{transform:translate(-50%,-1px) rotate(2deg)}}
-.walker{animation:walk 10s linear infinite}
+.walker{animation:walk 12s ease-in-out infinite}
 .walker-fig{display:block;transform:translate(-50%,0);animation:sway .7s ease-in-out infinite}
-.leg-a{transform-origin:26px 60px;animation:legs 10s linear infinite}
-.leg-b{transform-origin:34px 60px;animation:legs2 10s linear infinite}
-.arms-down{animation:armsdown 10s linear infinite}
-.arms-up{opacity:0;animation:armsup 10s linear infinite}
+.leg-a{transform-origin:26px 60px;animation:legs 12s linear infinite}
+.leg-b{transform-origin:34px 60px;animation:legs2 12s linear infinite}
+.arms-down{animation:armsdown 12s linear infinite}
+.arms-up{opacity:0;animation:armsup 12s linear infinite}
 
 @keyframes pulse{0%{box-shadow:6px 6px 0 #1A1A1A,0 0 0 0 rgba(200,22,29,.55)}70%{box-shadow:6px 6px 0 #1A1A1A,0 0 0 16px rgba(200,22,29,0)}100%{box-shadow:6px 6px 0 #1A1A1A,0 0 0 0 rgba(200,22,29,0)}}
 .tap-pulse{animation:pulse 1.8s ease-out infinite}
