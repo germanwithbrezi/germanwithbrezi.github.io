@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>German with Brezi — Learn German A1</title>
-<meta name="description" content="Online German A1 and A2 classes for beginners in India. Small live batches on Zoom, Goethe/telc exam prep, taught in English by Sruthi, who lives in Germany.">
+<meta name="description" content="Online German A1 and A2 classes for beginners in India. Small live batches online, Goethe/telc exam prep, taught in English by Sruthi, who lives in Germany.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&amp;family=Nunito:wght@400;600;800&amp;display=swap">
 <style>
@@ -27,6 +27,8 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 .press{transition:transform .12s ease, box-shadow .12s ease;cursor:pointer}
 .press:hover{transform:translate(-2px,-2px)}
 .press:active{transform:translate(3px,3px)}
+@keyframes pulse{0%{box-shadow:6px 6px 0 #1A1A1A,0 0 0 0 rgba(200,22,29,.55)}70%{box-shadow:6px 6px 0 #1A1A1A,0 0 0 16px rgba(200,22,29,0)}100%{box-shadow:6px 6px 0 #1A1A1A,0 0 0 0 rgba(200,22,29,0)}}
+.tap-pulse{animation:pulse 1.8s ease-out infinite}
 .m-only{display:none}
 @media (max-width: 640px){
 nav > div{padding:8px 14px !important;gap:6px !important}
@@ -58,6 +60,20 @@ section, header > div, section > div{padding-top:28px !important;padding-bottom:
 .m-chips{display:flex !important;flex-wrap:wrap;gap:8px !important}
 .m-chips .fact{padding:6px 12px !important;border-radius:999px !important;font-size:14px !important;border-width:2px !important}
 .m-only{display:block !important}
+html{scroll-snap-type:y proximity;scroll-padding-top:64px}
+header#top, main section, #app > section, section[id]{scroll-snap-align:start}
+.tap-hint{font-size:11px !important;white-space:normal;text-align:center;line-height:1.2}
+.spk{width:18px;height:18px}
+.faq-grid{gap:10px !important}
+.faq-grid button{padding:10px 14px !important;font-size:15px !important}
+#book input, #book select, #book textarea{padding:8px 10px !important;font-size:15px !important}
+#book form{gap:9px !important;padding:16px !important}
+#book form > div{gap:9px !important}
+#book h2{font-size:32px !important}
+#book p{font-size:14px !important}
+#book .press[type=button]{padding:6px 10px !important;font-size:13px !important}
+.m-2sel{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:8px !important}
+.clip{width:58px;height:50px}
 [style*="gap: 28px"],[style*="gap: 26px"],[style*="gap: 24px"]{gap:14px !important}
 section{padding-top:18px !important;padding-bottom:18px !important}
 [style*="width: 380px"]{transform:scale(.86);transform-origin:top center;margin-bottom:-58px}
@@ -96,7 +112,7 @@ section{padding-top:18px !important;padding-bottom:18px !important}
 <a href="play.html" class="press" style="background: #FFFFFF; color: #1A1A1A; text-decoration: none; font-weight: 800; font-size: 18px; padding: 16px 26px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Play der · die · das</a>
 </div>
 <div class="m-hide" style="display: flex; flex-wrap: wrap; gap: 10px; font-size: 15px; font-weight: 800">
-<span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 14px">Live on Zoom</span>
+<span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 14px">Live online</span>
 <span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 14px">5–8 learners per batch</span>
 <span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 14px">Goethe / telc exam prep</span>
 <span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 14px">From ₹9,000 per level</span>
@@ -110,8 +126,8 @@ section{padding-top:18px !important;padding-bottom:18px !important}
 </a>
 </div>
 <div class="hero-mascot" style="flex: 1 1 340px; display: flex; flex-direction: column; align-items: center; gap: 8px">
-<button class="press" @click="v.nextGreeting" aria-label="Make Brezi say another German greeting" style="background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 28px; padding: 18px 30px; box-shadow: 6px 6px 0 #1A1A1A; font-family: 'Bangers', system-ui, sans-serif; font-size: 48px; letter-spacing: 1.5px; color: #1A1A1A; position: relative">{{ v.greeting }}</button>
-<span class="m-hide" style="font-size: 14px; font-weight: 600">tap the bubble</span>
+<button @click="v.nextGreeting" aria-label="Tap to hear Brezi say a German greeting" class="press tap-pulse" style="display: inline-flex; align-items: center; gap: 12px; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 28px; padding: 18px 30px; box-shadow: 6px 6px 0 #1A1A1A; font-family: 'Bangers', system-ui, sans-serif; font-size: 48px; letter-spacing: 1.5px; color: #1A1A1A; position: relative">{{ v.greeting }}<svg class="spk" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#C8161D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a10 10 0 0 1 0 14"></path></svg></button>
+<span class="tap-hint" style="font-size: 15px; font-weight: 800">👆 Tap me to hear German</span>
 <svg class="bob hero-brezi" width="300" height="260" viewBox="0 0 220 190" aria-hidden="true">
 <path d="M110 160 C 45 160, 22 98, 52 64 C 82 30, 128 66, 110 104 C 92 66, 138 30, 168 64 C 198 98, 175 160, 110 160 Z" fill="none" stroke="#1A1A1A" stroke-width="30" stroke-linejoin="round"></path>
 <path d="M110 160 C 45 160, 22 98, 52 64 C 82 30, 128 66, 110 104 C 92 66, 138 30, 168 64 C 198 98, 175 160, 110 160 Z" fill="none" stroke="#C9813F" stroke-width="22" stroke-linejoin="round"></path>
@@ -154,11 +170,11 @@ section{padding-top:18px !important;padding-bottom:18px !important}
 <div style="background: #FFF6CC; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
 <span class="display how-num" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">1</span>
 <strong style="font-size: 20px">Free demo class</strong>
-<span class="m-hide" style="font-size: 16px; line-height: 1.5">30 minutes on Zoom. Meet me, tell me your plans, and try a mini-lesson.</span>
+<span class="m-hide" style="font-size: 16px; line-height: 1.5">30 minutes online. Meet me, tell me your plans, and try a mini-lesson.</span>
 </div>
 <div style="background: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
 <span class="display how-num" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">2</span>
-<strong style="font-size: 20px">Live classes on Zoom</strong>
+<strong style="font-size: 20px">Online live classes</strong>
 <span class="m-hide" style="font-size: 16px; line-height: 1.5">5–8 learners, 3 classes a week, lots of speaking in small breakout rooms.</span>
 </div>
 <div style="background: #FFE3E3; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
@@ -243,7 +259,14 @@ section{padding-top:18px !important;padding-bottom:18px !important}
 <h2 class="display" style="margin: 0; font-size: 60px">Meet your teacher <span style="color: #C8161D">(and Brezi)</span></h2>
 <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: stretch">
 <div class="halftone" style="flex: 999 1 420px; background-color: #FFF6CC; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #1A1A1A; padding: 32px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center">
+<div style="position: relative; width: 170px; height: 170px">
 <img src="assets/sruthi.jpg" alt="Sruthi, your German teacher" style="width: 170px; height: 170px; border-radius: 50%; border: 4px solid #1A1A1A; box-shadow: 5px 5px 0 #C8161D; object-fit: cover; background: #FFFFFF">
+<svg class="clip" width="78" height="68" viewBox="0 0 220 190" aria-hidden="true" style="position: absolute; top: -6px; left: -4px; transform: rotate(-24deg); filter: drop-shadow(3px 3px 0 #1A1A1A)">
+<path d="M110 160 C 45 160, 22 98, 52 64 C 82 30, 128 66, 110 104 C 92 66, 138 30, 168 64 C 198 98, 175 160, 110 160 Z" fill="none" stroke="#1A1A1A" stroke-width="34" stroke-linejoin="round"></path>
+<path d="M110 160 C 45 160, 22 98, 52 64 C 82 30, 128 66, 110 104 C 92 66, 138 30, 168 64 C 198 98, 175 160, 110 160 Z" fill="none" stroke="#C9813F" stroke-width="24" stroke-linejoin="round"></path>
+<circle cx="62" cy="72" r="5" fill="#FFFFFF"></circle><circle cx="158" cy="74" r="5" fill="#FFFFFF"></circle><circle cx="110" cy="150" r="5" fill="#FFFFFF"></circle>
+</svg>
+</div>
 <h3 class="display" style="margin: 0; font-size: 40px">Hallo, ich bin Sruthi!</h3>
 <div style="display: flex; gap: 8px" role="group" aria-label="Read my intro in">
 <template v-for="(t, $index) in v.introTabs">
@@ -282,14 +305,14 @@ section{padding-top:18px !important;padding-bottom:18px !important}
 <section id="questions" style="max-width: 1180px; margin: 0 auto; padding: 80px 24px 40px; display: flex; flex-direction: column; gap: 28px">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <h2 class="display" style="margin: 0; font-size: 60px">Got a question? <span style="color: #C8161D">Click it.</span></h2>
-<p style="margin: 0; font-size: 19px">The things everyone asks before starting German.</p>
+<p class="m-hide" style="margin: 0; font-size: 19px">The things everyone asks before starting German.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; align-items: start">
+<div class="faq-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: start">
 <template v-for="(q, $index) in v.questions">
 <div :class="q.extra" :style="q.cardStyle">
-<button class="press" @click="q.toggle" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; background: transparent; border: 0; padding: 20px 22px; text-align: left; font-family: 'Nunito', system-ui, sans-serif; font-size: 20px; font-weight: 800; color: #1A1A1A">
+<button class="press" @click="q.toggle" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; background: transparent; border: 0; padding: 14px 18px; text-align: left; font-family: 'Nunito', system-ui, sans-serif; font-size: 18px; font-weight: 800; color: #1A1A1A">
 <span>{{ q.title }}</span>
-<span class="display" style="flex: none; width: 42px; height: 42px; border: 3px solid #1A1A1A; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 30px">{{ q.sign }}</span>
+<span class="display" style="flex: none; width: 34px; height: 34px; border: 3px solid #1A1A1A; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 24px">{{ q.sign }}</span>
 </button>
 <template v-if="q.open">
 <div style="padding: 0 22px 22px; display: flex; flex-direction: column; gap: 12px">
@@ -336,8 +359,8 @@ section{padding-top:18px !important;padding-bottom:18px !important}
 <div style="max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
 <div style="flex: 1 1 340px; color: #FFFFFF; display: flex; flex-direction: column; gap: 16px">
 <h2 class="display" style="margin: 0; font-size: 72px; line-height: 1">Try a class. It's free.</h2>
-<p style="margin: 0; font-size: 20px; line-height: 1.5">30 minutes on Zoom. We say hallo, you tell me your plans, and you try a mini-lesson. No pressure to join.</p>
-<p style="margin: 0; font-size: 17px; line-height: 1.5">Just have a question? Use the same form. You'll get an email reply.</p>
+<p style="margin: 0; font-size: 20px; line-height: 1.5">30 minutes online. We say hallo, you tell me your plans, and you try a mini-lesson. No pressure to join.</p>
+<p class="m-hide" style="margin: 0; font-size: 17px; line-height: 1.5">Just have a question? Use the same form. You'll get an email reply.</p>
 </div>
 <form @submit.prevent="send('demo')" style="position: relative; flex: 1 1 420px; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #1A1A1A; padding: 28px; display: flex; flex-direction: column; gap: 14px">
 <div v-if="forms.demo.state !== 'sent'" style="display: flex; flex-direction: column; gap: 14px">
@@ -349,15 +372,15 @@ section{padding-top:18px !important;padding-bottom:18px !important}
 <input v-model="forms.demo.website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px">
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Your name<input v-model="forms.demo.name" required autocomplete="name" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"></label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Your email<input v-model="forms.demo.email" type="email" required autocomplete="email" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"></label>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px">
+<div class="m-2sel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px">
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Level<select v-model="forms.demo.level" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"><option>A1 – from zero</option><option>A2 – I know A1</option><option>Not sure</option></select></label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Best time<select v-model="forms.demo.time" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"><option>Weekday evenings</option><option>Weekends</option><option>Either</option></select></label>
 </div>
-<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Why German? Anything you want to ask?<textarea v-model="forms.demo.message" rows="3" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A; resize: vertical"></textarea></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Why German? Anything you want to ask?<textarea v-model="forms.demo.message" rows="2" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A; resize: vertical"></textarea></label>
 <button type="submit" class="press" :disabled="forms.demo.state === 'sending'" style="background: #FFCE00; color: #1A1A1A; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 5px 5px 0 #1A1A1A; padding: 14px 22px; font-family: Nunito, system-ui, sans-serif; font-size: 19px; font-weight: 800">{{ forms.demo.state === 'sending' ? 'Sending…' : 'Send' }}</button>
 <p v-if="forms.demo.state === 'error'" style="margin: 0; color: #8E0E13; font-weight: 800">Sorry, that didn't go through. Please try again in a minute.</p>
 <p v-if="forms.demo.state === 'soon'" style="margin: 0; color: #8E0E13; font-weight: 800">Bookings open very soon. Please check back in a few days!</p>
-<p style="margin: 0; font-size: 13px; color: #555555">Your details are only used to reply to you.</p>
+<p class="m-hide" style="margin: 0; font-size: 13px; color: #555555">Your details are only used to reply to you.</p>
 </div>
 <div v-if="forms.demo.state === 'sent'">
 <div class="pop" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; padding: 20px 0">
@@ -420,7 +443,7 @@ class Component extends DCLogic {
         extra: qi >= 3 && !s.allQ ? 'm-hide' : '',
         title: q.title, answer: q.answer, more: q.more, href: q.href, open: open,
         sign: open ? '–' : '+',
-        cardStyle: 'background: ' + (open ? q.bg : '#FFFFFF') + '; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: ' + (open ? '8px 8px 0 #C8161D' : '6px 6px 0 #1A1A1A') + '; overflow: hidden',
+        cardStyle: 'background: ' + (open ? q.bg : '#FFFFFF') + '; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: ' + (open ? '6px 6px 0 #C8161D' : '4px 4px 0 #1A1A1A') + '; overflow: hidden',
         toggle: () => this.setState({ openQ: open ? null : q.id })
       };
     });
@@ -551,7 +574,7 @@ class Component extends DCLogic {
       short: cd.short, title: cd.title, lead: cd.lead, batches: [{ name: 'Evening batch', when: 'Mon · Wed · Fri · 7:00–9:00 pm IST', start: 'Starts every month' }, { name: 'Weekend batch', when: 'Sat · Sun · 3:00–6:00 pm IST', start: 'Starts every month' }],
       items: [
         { head: '5–8 learners', text: 'Small enough that everyone speaks', style: tile('#DFF1FF') },
-        { head: '40 live classes', text: '2 hours each on Zoom, 3 a week', style: tile('#FFE3E3') },
+        { head: '40 live classes', text: '2 hours each online, 3 a week', style: tile('#FFE3E3') },
         { head: cd.book, text: 'The book Goethe-Institut India uses', style: tile('#FFF6CC') },
         { head: 'Exam-ready', text: cd.exam, style: tile('#E6F6EC') }
       ]
