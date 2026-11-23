@@ -38,13 +38,12 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <!-- NAV -->
 <nav style="position: sticky; top: 0; z-index: 10; background: #FFCE00; border-bottom: 4px solid #1A1A1A">
 <div style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-<a href="index.html" class="display" style="font-size: 30px; color: #1A1A1A; text-decoration: none">German <span style="color: #C8161D">with</span> Brezi <span style="font-family: 'Nunito', system-ui, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 0">by Sruthi</span></a>
+<a href="index.html" class="display" style="font-size: 30px; color: #1A1A1A; text-decoration: none">German <span style="color: #C8161D">with</span> Brezi</a>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; font-weight: 800; font-size: 16px">
-<a href="index.html#questions" style="color: #1A1A1A; text-decoration: none">Questions</a>
-<a href="index.html#quiz" style="color: #1A1A1A; text-decoration: none">Level quiz</a>
 <a href="index.html#course" style="color: #1A1A1A; text-decoration: none">Courses</a>
-<a href="index.html#batches" style="color: #1A1A1A; text-decoration: none">Batches</a>
-<a href="play.html" style="color: #1A1A1A; text-decoration: none">Play &amp; learn</a>
+<a href="index.html#about" style="color: #1A1A1A; text-decoration: none">About</a>
+<a href="#top" style="color: #1A1A1A; text-decoration: none">Play &amp; learn</a>
+<a href="index.html#questions" style="color: #1A1A1A; text-decoration: none">FAQ</a>
 <a href="index.html#book" class="press" style="background: #C8161D; color: #FFFFFF; text-decoration: none; padding: 10px 18px; border: 3px solid #1A1A1A; border-radius: 999px; box-shadow: 4px 4px 0 #1A1A1A">Free demo class</a>
 </div>
 </div>
@@ -55,12 +54,12 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <div style="max-width: 1180px; margin: 0 auto; padding: 56px 24px; display: flex; flex-direction: column; gap: 14px">
 <a href="index.html" style="font-weight: 800">← Back to home</a>
 <h1 class="display" style="margin: 0; font-size: 80px; line-height: 0.95">Play &amp; <span style="color: #C8161D">learn</span></h1>
-<p style="margin: 0; font-size: 20px; max-width: 620px; line-height: 1.5">Grammar comics, the der/die/das game and flip cards. New ones every week.</p>
+<p style="margin: 0; font-size: 20px; max-width: 620px; line-height: 1.5">Four quick games: grammar bites, der · die · das, flip words and the spin-the-wheel quiz. New ones every week.</p>
 </div>
 </header>
 
 <!-- GRAMMAR COMIC -->
-<section style="max-width: 1180px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 24px">
+<section id="grammar" style="max-width: 1180px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 24px">
 <h2 class="display" style="margin: 0; font-size: 52px">Grammar bite #1: <span style="color: #C8161D">the verb loves seat 2</span></h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
 <div class="halftone" style="background-color: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: 6px 6px 0 #1A1A1A; padding: 24px; display: flex; flex-direction: column; gap: 16px; min-height: 230px">
@@ -127,6 +126,65 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 </button>
 </div>
 </template>
+</div>
+</section>
+
+<!-- SPIN QUIZ -->
+<section id="quiz" class="halftone" style="background-color: #FFF6CC; border-top: 4px solid #1A1A1A; border-bottom: 4px solid #1A1A1A; margin-top: 0">
+<div style="max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px">
+<h2 class="display" style="margin: 0; font-size: 64px; line-height: 1">Spin the wheel. <span style="color: #C8161D">Test yourself.</span></h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.5">Spin 5 times and answer whatever the wheel lands on. How many can you get right?</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<template v-for="(d, $index) in v.quizDots">
+<span aria-hidden="true" :style="d.style"></span>
+</template>
+</div>
+<span class="display" style="font-size: 28px">{{ v.quizStatus }}</span>
+</div>
+<div style="flex: 1 1 420px; display: flex; justify-content: center">
+<div style="position: relative; width: 380px; max-width: 100%; height: 420px; display: flex; justify-content: center; align-items: flex-end">
+<div aria-hidden="true" style="position: absolute; top: 0; left: 50%; margin-left: -22px; width: 0; height: 0; border-left: 22px solid transparent; border-right: 22px solid transparent; border-top: 40px solid #1A1A1A; z-index: 3"></div>
+<div aria-hidden="true" :style="v.wheelStyle">
+<template v-for="(w, $index) in v.wheelLabels">
+<span :style="w.style">{{ w.label }}</span>
+</template>
+</div>
+<button class="press" @click="v.spin" :disabled="v.spinDisabled" style="position: absolute; left: 50%; bottom: 160px; margin-left: -50px; width: 100px; height: 100px; border-radius: 50%; border: 4px solid #1A1A1A; background: #FFFFFF; box-shadow: 4px 4px 0 #1A1A1A; font-family: Bangers, system-ui, sans-serif; letter-spacing: 1.5px; font-size: 30px; color: #C8161D; z-index: 2">{{ v.spinLabel }}</button>
+<template v-if="v.showQuestion">
+<div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 4">
+<div class="pop" role="dialog" aria-label="Quiz question" style="width: 100%; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #C8161D; padding: 26px; display: flex; flex-direction: column; gap: 14px">
+<span :style="v.qBadgeStyle">{{ v.qTopic }} · {{ v.qLevel }}</span>
+<p style="margin: 0; font-size: 22px; font-weight: 800; line-height: 1.35">{{ v.qText }}</p>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<template v-for="(o, $index) in v.qOptions">
+<button class="press" @click="o.pick" :style="o.style">{{ o.label }}</button>
+</template>
+</div>
+<template v-if="v.qAnswered">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
+<span style="font-size: 18px; font-weight: 800">{{ v.qFeedback }}</span>
+<button class="press" @click="v.closeQuestion" style="background: #FFCE00; color: #1A1A1A; border: 3px solid #1A1A1A; border-radius: 12px; box-shadow: 3px 3px 0 #1A1A1A; padding: 10px 18px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; font-weight: 800">{{ v.continueLabel }}</button>
+</div>
+</template>
+</div>
+</div>
+</template>
+<template v-if="v.showResult">
+<div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 4">
+<div class="pop" role="dialog" aria-label="Your level result" style="width: 100%; background: #1A1A1A; color: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #FFCE00; padding: 30px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+<span style="font-size: 15px; font-weight: 800; color: #FFCE00">YOU GOT {{ v.correct }} OF 5</span>
+<span class="display" style="font-size: 52px; line-height: 1; color: #FFCE00">{{ v.resultTitle }}</span>
+<p style="margin: 0; font-size: 17px; line-height: 1.5">{{ v.resultText }}</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px">
+<a href="index.html#book" class="press" style="background: #C8161D; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 17px; padding: 12px 20px; border: 3px solid #FFFFFF; border-radius: 12px">Book a free demo</a>
+<button class="press" @click="v.resetQuiz" style="background: #FFFFFF; color: #1A1A1A; border: 3px solid #FFFFFF; border-radius: 12px; padding: 12px 20px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; font-weight: 800">Spin again</button>
+</div>
+</div>
+</div>
+</template>
+</div>
+</div>
 </div>
 </section>
 
@@ -291,10 +349,10 @@ class Component extends DCLogic {
       if (this.state.asked.length >= total) this.setState({ phase: 'result' });
       else this.setState({ phase: 'idle', qPicked: null });
     };
-    let resultTitle = 'Start with A1';
-    let resultText = 'Perfect starting point: we build your German from the very first word. A free demo class is the easiest way to begin.';
-    if (s.correct >= 4 && s.correctA2 >= 1) { resultTitle = 'A2 might be for you'; resultText = 'You already know the A1 basics. Book a free demo and we will confirm your level in 10 minutes.'; }
-    else if (s.correct >= 3) { resultTitle = 'A1, with a head start'; resultText = 'You know some German already. In A1 you will move fast and fill the gaps before the exam.'; }
+    let resultTitle = 'Guter Anfang!';
+    let resultText = 'Every German learner starts somewhere. Book a free demo and I will find the right level for you.';
+    if (s.correct === 5) { resultTitle = 'Perfekt!'; resultText = 'Five out of five. Wunderbar! Book a free demo and let us see how far you can go.'; }
+    else if (s.correct >= 3) { resultTitle = 'Super gemacht!'; resultText = 'Great job. A free demo class is the best way to find your exact level.'; }
     const quizDots = [0, 1, 2, 3, 4].map((i) => ({ style: 'width: 22px; height: 22px; border-radius: 50%; border: 3px solid #1A1A1A; background: ' + (i < done ? '#C8161D' : '#FFFFFF') }));
     let quizStatus = 'Tap SPIN to start!';
     if (s.spinning) quizStatus = 'Spinning…';
@@ -302,13 +360,13 @@ class Component extends DCLogic {
     else if (done > 0) quizStatus = 'Question ' + done + ' of ' + total + ' · ' + s.correct + ' right so far';
     const pill = (on) => 'padding: 10px 18px; border: 3px solid #1A1A1A; border-radius: 999px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; font-weight: 800; box-shadow: 3px 3px 0 #1A1A1A; background: ' + (on ? '#1A1A1A' : '#FFFFFF') + '; color: ' + (on ? '#FFCE00' : '#1A1A1A');
     const courseData = {
-      A1: { title: 'The A1 batch', lead: 'From zero to your first real conversations, and the Goethe/telc A1 certificate.', book: 'Netzwerk neu A1', exam: 'Goethe / telc A1 mock tests' },
-      A2: { title: 'The A2 batch', lead: 'For A1 graduates: talk about your past, your work and your plans, and pass Goethe/telc A2.', book: 'Netzwerk neu A2', exam: 'Goethe / telc A2 mock tests' }
+      A1: { short: 'A1', title: 'The A1 course', lead: 'From zero to your first real conversations, and the Goethe/telc A1 certificate.', book: 'Netzwerk neu A1', exam: 'Goethe / telc A1 mock tests' },
+      A2: { short: 'A2', title: 'The A2 course', lead: 'For A1 graduates: talk about your past, your work and your plans, and pass Goethe/telc A2.', book: 'Netzwerk neu A2', exam: 'Goethe / telc A2 mock tests' }
     };
     const cd = courseData[s.level] || courseData.A1;
     const tile = (bg) => 'background: ' + bg + '; border: 3px solid #1A1A1A; border-radius: 14px; padding: 16px';
     const course = {
-      title: cd.title, lead: cd.lead,
+      short: cd.short, title: cd.title, lead: cd.lead, batches: [{ name: 'Evening batch', when: 'Mon · Wed · Fri · 7:00–9:00 pm IST', start: 'Starts [DATE]' }, { name: 'Weekend batch', when: 'Sat · Sun · 3:00–6:00 pm IST', start: 'Starts [DATE]' }],
       items: [
         { head: '5–8 learners', text: 'Small enough that everyone speaks', style: tile('#DFF1FF') },
         { head: '40 live classes', text: '2 hours each on Zoom, 3 a week', style: tile('#FFE3E3') },
@@ -355,7 +413,7 @@ class Component extends DCLogic {
       qBadgeStyle: 'align-self: flex-start; padding: 4px 12px; border: 2px solid #1A1A1A; border-radius: 999px; font-size: 14px; font-weight: 800; background: ' + (cq.lvl === 'A2' ? '#1A1A1A' : '#FFCE00') + '; color: ' + (cq.lvl === 'A2' ? '#FFCE00' : '#1A1A1A'),
       qAnswered: s.qPicked !== null,
       qFeedback: s.qPicked === null ? '' : (s.qPicked === cq.a ? 'Richtig!' : 'Fast! Answer: ' + cq.o[cq.a]),
-      continueLabel: done >= total ? 'See my level →' : 'Spin again →',
+      continueLabel: done >= total ? 'See my score →' : 'Spin again →',
       closeQuestion: closeQuestion,
       correct: s.correct, resultTitle: resultTitle, resultText: resultText,
       resetQuiz: () => this.setState({ phase: 'idle', asked: [], qPicked: null, correct: 0, correctA2: 0 }),
