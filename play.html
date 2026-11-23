@@ -322,15 +322,56 @@ class Component extends DCLogic {
     });
     const tick = ['Hallo', 'Danke', 'Bitte', 'Tschüss', 'Guten Morgen', 'Guten Abend', 'Kaffee', 'Brezel', 'Wunderbar', 'Prost', 'Gemütlich', 'Feierabend', 'Genau', 'Entschuldigung', 'Lecker', 'Willkommen', 'Bahnhof', 'Freund', 'Sonne', 'Kuchen', 'Wasser', 'Brot', 'Super', 'Schön', 'Fernweh', 'Stadt', 'Zug', 'Apfel', 'Ja', 'Nein'];
     const tick2 = [['Hallo', 'Hello'], ['Danke', 'Thank you'], ['Bitte', 'Please'], ['Lecker', 'Tasty'], ['Feierabend', 'Work is over!'], ['Gemütlich', 'Cosy'], ['Fernweh', 'Longing to travel'], ['Genau', 'Exactly'], ['Bahnhof', 'Train station'], ['Kuchen', 'Cake'], ['Schön', 'Beautiful'], ['Freund', 'Friend'], ['Wasser', 'Water'], ['Entschuldigung', 'Sorry'], ['Willkommen', 'Welcome']].map((x) => ({ de: x[0], en: x[1] }));
+    const Q = (q, o, a) => ({ q: q, o: o, a: a });
     const segs = [
-      { label: 'Greetings', lvl: 'A1', bg: '#FFCE00', fg: '#1A1A1A', q: 'How do you say "Good morning"?', o: ['Guten Morgen', 'Gute Nacht', 'Guten Abend'], a: 0 },
-      { label: 'Numbers', lvl: 'A1', bg: '#C8161D', fg: '#FFFFFF', q: 'What is "zwölf"?', o: ['20', '12', '2'], a: 1 },
-      { label: 'Food', lvl: 'A1', bg: '#DFF1FF', fg: '#1A1A1A', q: '"Ich möchte einen Kaffee." What does the person want?', o: ['A cake', 'A tea', 'A coffee'], a: 2 },
-      { label: 'Family', lvl: 'A1', bg: '#1A1A1A', fg: '#FFCE00', q: '"Meine Schwester" means my…', o: ['sister', 'brother', 'mother'], a: 0 },
-      { label: 'Time', lvl: 'A1', bg: '#FFCE00', fg: '#1A1A1A', q: '"Es ist halb drei." What time is it?', o: ['3:30', '2:30', '3:00'], a: 1 },
-      { label: 'Verbs', lvl: 'A1', bg: '#C8161D', fg: '#FFFFFF', q: 'Ich ___ aus Indien.', o: ['kommst', 'kommt', 'komme'], a: 2 },
-      { label: 'Past tense', lvl: 'A2', bg: '#DFF1FF', fg: '#1A1A1A', q: 'Gestern ___ ich Pizza gegessen.', o: ['habe', 'bin', 'hatte'], a: 0 },
-      { label: 'Travel', lvl: 'A2', bg: '#1A1A1A', fg: '#FFCE00', q: 'Ich fahre ___ Zug nach Berlin.', o: ['mit der', 'mit dem', 'mit den'], a: 1 }
+      { label: 'Greetings', lvl: 'A1', bg: '#FFCE00', fg: '#1A1A1A', pool: [
+        Q('How do you say "Good morning"?', ['Guten Morgen', 'Gute Nacht', 'Guten Abend'], 0),
+        Q('"Tschüss" means…', ['Thanks', 'Bye', 'Please'], 1),
+        Q('You meet a friend at 8 pm. You say…', ['Guten Morgen', 'Gute Nacht', 'Guten Abend'], 2),
+        Q('"Wie geht’s?" means…', ['How are you?', 'Where are you?', 'What is your name?'], 0),
+        Q('"Danke" means…', ['Please', 'Thank you', 'Sorry'], 1) ] },
+      { label: 'Numbers', lvl: 'A1', bg: '#C8161D', fg: '#FFFFFF', pool: [
+        Q('What is "zwölf"?', ['20', '12', '2'], 1),
+        Q('What is "sieben"?', ['7', '17', '70'], 0),
+        Q('What is "zwanzig"?', ['12', '200', '20'], 2),
+        Q('How do you say 3?', ['dreißig', 'drei', 'zwei'], 1),
+        Q('What is "hundert"?', ['100', '1000', '10'], 0) ] },
+      { label: 'Food', lvl: 'A1', bg: '#DFF1FF', fg: '#1A1A1A', pool: [
+        Q('"Ich möchte einen Kaffee." What does the person want?', ['A cake', 'A tea', 'A coffee'], 2),
+        Q('"Brot" is…', ['bread', 'butter', 'cake'], 0),
+        Q('"Lecker!" means…', ['Cheers!', 'Tasty!', 'Hungry!'], 1),
+        Q('"Ein Wasser, bitte." What are you ordering?', ['A water', 'A wine', 'A beer'], 0),
+        Q('"Der Apfel" is…', ['the orange', 'the apple', 'the banana'], 1) ] },
+      { label: 'Family', lvl: 'A1', bg: '#1A1A1A', fg: '#FFCE00', pool: [
+        Q('"Meine Schwester" means my…', ['sister', 'brother', 'mother'], 0),
+        Q('"Mein Bruder" means my…', ['father', 'brother', 'son'], 1),
+        Q('"Die Eltern" are…', ['the children', 'the grandparents', 'the parents'], 2),
+        Q('"Oma" is your…', ['grandma', 'aunt', 'mother'], 0),
+        Q('"Die Tochter" is…', ['the daughter', 'the son', 'the cousin'], 0) ] },
+      { label: 'Time', lvl: 'A1', bg: '#FFCE00', fg: '#1A1A1A', pool: [
+        Q('"Es ist halb drei." What time is it?', ['3:30', '2:30', '3:00'], 1),
+        Q('"Viertel nach vier" is…', ['4:15', '3:45', '4:45'], 0),
+        Q('"Montag" is…', ['Sunday', 'Friday', 'Monday'], 2),
+        Q('"morgen" (small m) means…', ['yesterday', 'tomorrow', 'today'], 1),
+        Q('"Wochenende" means…', ['weekend', 'weekday', 'week'], 0) ] },
+      { label: 'Verbs', lvl: 'A1', bg: '#C8161D', fg: '#FFFFFF', pool: [
+        Q('Ich ___ aus Indien.', ['kommst', 'kommt', 'komme'], 2),
+        Q('Du ___ Deutsch.', ['lernst', 'lerne', 'lernt'], 0),
+        Q('Wir ___ in Berlin.', ['wohnt', 'wohnen', 'wohnst'], 1),
+        Q('Ich ___ Sruthi. (= My name is Sruthi)', ['heißt', 'heißen', 'heiße'], 2),
+        Q('Er ___ Kaffee.', ['trinkt', 'trinke', 'trinken'], 0) ] },
+      { label: 'Past tense', lvl: 'A2', bg: '#DFF1FF', fg: '#1A1A1A', pool: [
+        Q('Gestern ___ ich Pizza gegessen.', ['habe', 'bin', 'hatte'], 0),
+        Q('Ich ___ nach Berlin gefahren.', ['habe', 'bin', 'hat'], 1),
+        Q('The past form of "machen" is…', ['gemachen', 'macht', 'gemacht'], 2),
+        Q('Wir ___ Fußball gespielt.', ['haben', 'sind', 'seid'], 0),
+        Q('Sie ___ spät aufgestanden.', ['hat', 'ist', 'haben'], 1) ] },
+      { label: 'Travel', lvl: 'A2', bg: '#1A1A1A', fg: '#FFCE00', pool: [
+        Q('Ich fahre ___ Zug nach Berlin.', ['mit der', 'mit dem', 'mit den'], 1),
+        Q('Wo ist ___ Bahnhof?', ['der', 'die', 'das'], 0),
+        Q('Ich fahre ___ München.', ['zu', 'nach', 'in'], 1),
+        Q('"Eine Fahrkarte" is…', ['a map', 'a timetable', 'a ticket'], 2),
+        Q('"Gleis 3" tells you the…', ['platform', 'seat', 'price'], 0) ] }
     ];
     const n = segs.length, step = 360 / n;
     const grad = segs.map((g, i) => g.bg + ' ' + (i * step) + 'deg ' + ((i + 1) * step) + 'deg').join(', ');
@@ -341,7 +382,9 @@ class Component extends DCLogic {
     }));
     const done = s.asked.length;
     const total = 5;
-    const cq = segs[s.seg];
+    const cseg = segs[s.seg];
+    const cqq = cseg.pool[(s.qIdx || 0) % cseg.pool.length];
+    const cq = { label: cseg.label, lvl: cseg.lvl, q: cqq.q, o: cqq.o, a: cqq.a };
     const qOptions = cq.o.map((label, idx) => {
       let bg = '#FFFFFF', col = '#1A1A1A';
       if (s.qPicked !== null) {
@@ -366,7 +409,7 @@ class Component extends DCLogic {
       const center = pickI * step + step / 2;
       const base = st.rot - (st.rot % 360);
       const target = base + 360 * 5 + (360 - center);
-      this.setState({ rot: target, spinning: true, seg: pickI });
+      this.setState({ rot: target, spinning: true, seg: pickI, qIdx: Math.floor(Math.random() * segs[pickI].pool.length) });
       this.spinTimer = setTimeout(() => {
         this.setState({ spinning: false, phase: 'question', qPicked: null, asked: this.state.asked.concat([pickI]) });
       }, 3500);
