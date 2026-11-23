@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wunderbar! Your first German sentence · German with Brezi</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&amp;family=Nunito:wght@400;600;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Nunito',system-ui,sans-serif;color:#1A1A1A;background:#FFF6CC;background-image:radial-gradient(rgba(26,26,26,0.13) 1.3px,transparent 1.6px);background-size:14px 14px}
+.display{font-family:'Bangers',system-ui,sans-serif;letter-spacing:1.5px;font-weight:400}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-12px) rotate(2deg)}}
+@keyframes blink{0%,90%,100%{transform:scaleY(1)}94%{transform:scaleY(0.1)}}
+@keyframes pop{0%{transform:scale(.6) rotate(-6deg);opacity:0}70%{transform:scale(1.06) rotate(2deg);opacity:1}100%{transform:scale(1) rotate(0)}}
+@keyframes fall{0%{transform:translateY(-10vh) rotate(0)}100%{transform:translateY(110vh) rotate(540deg)}}
+.bob{animation:bob 3.2s ease-in-out infinite}.eye{transform-box:fill-box;transform-origin:center;animation:blink 4s infinite}.pop{animation:pop .5s ease-out}
+.confetti{position:fixed;top:0;width:12px;height:18px;border:2px solid #1A1A1A;animation:fall linear forwards;pointer-events:none}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:19px;padding:14px 24px;border:3px solid #1A1A1A;border-radius:14px;box-shadow:5px 5px 0 #1A1A1A;cursor:pointer;font-family:'Nunito',system-ui,sans-serif;transition:transform .12s}
+.btn:hover{transform:translate(-2px,-2px)}.btn:active{transform:translate(3px,3px)}
+@media (prefers-reduced-motion: reduce){.bob,.eye,.pop,.confetti{animation:none}.confetti{display:none}}
+</style>
+</head>
+<body>
+<main style="max-width:720px;margin:0 auto;padding:40px 20px 60px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center">
+<a href="index.html" class="display" style="font-size:28px;color:#1A1A1A;text-decoration:none">German <span style="color:#C8161D">with</span> Brezi</a>
+<h1 id="title" class="display pop" style="margin:0;font-size:72px;line-height:1;color:#C8161D">Wunderbar!</h1>
+<svg class="bob" width="260" height="225" viewBox="0 0 220 190" aria-hidden="true">
+<path d="M110 160 C 45 160, 22 98, 52 64 C 82 30, 128 66, 110 104 C 92 66, 138 30, 168 64 C 198 98, 175 160, 110 160 Z" fill="none" stroke="#1A1A1A" stroke-width="30" stroke-linejoin="round"></path>
+<path d="M110 160 C 45 160, 22 98, 52 64 C 82 30, 128 66, 110 104 C 92 66, 138 30, 168 64 C 198 98, 175 160, 110 160 Z" fill="none" stroke="#C9813F" stroke-width="22" stroke-linejoin="round"></path>
+<circle cx="60" cy="70" r="3" fill="#FFFFFF"></circle>
+<circle cx="160" cy="72" r="3" fill="#FFFFFF"></circle>
+<circle cx="72" cy="140" r="3" fill="#FFFFFF"></circle>
+<circle cx="150" cy="138" r="3" fill="#FFFFFF"></circle>
+<circle cx="182" cy="110" r="3" fill="#FFFFFF"></circle>
+<ellipse class="eye" cx="96" cy="128" rx="7" ry="9" fill="#1A1A1A"></ellipse>
+<ellipse class="eye" cx="124" cy="128" rx="7" ry="9" fill="#1A1A1A"></ellipse>
+<path d="M98 144 Q 110 154 122 144" fill="none" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round"></path>
+<circle cx="86" cy="142" r="5" fill="#F08A8A"></circle>
+<circle cx="134" cy="142" r="5" fill="#F08A8A"></circle>
+</svg>
+<div class="pop" style="background:#FFFFFF;border:4px solid #1A1A1A;border-radius:24px;box-shadow:8px 8px 0 #1A1A1A;padding:26px;display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;box-sizing:border-box">
+<span style="font-weight:800;font-size:15px;letter-spacing:1px">YOUR FIRST GERMAN SENTENCE</span>
+<span id="sentence" class="display" style="font-size:52px;line-height:1.05">Ich heiße …</span>
+<span id="meaning" style="font-size:18px">= My name is …</span>
+<button id="say" class="btn" style="background:#FFCE00;color:#1A1A1A">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a10 10 0 0 1 0 14"></path></svg>
+Hear it
+</button>
+<p style="margin:0;font-size:17px;line-height:1.5">Now say it out loud yourself, twice. Sruthi just got a message that you did the challenge. 🥨</p>
+</div>
+<p style="margin:6px 0 0;font-size:19px;font-weight:800">Want sentence number two?</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+<a class="btn" href="play.html" style="background:#FFFFFF;color:#1A1A1A">Play the games</a>
+<a class="btn" href="index.html#book" style="background:#C8161D;color:#FFFFFF">Book the free demo</a>
+</div>
+</main>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var name = (q.get('n') || '').trim().slice(0, 40);
+  var email = (q.get('e') || '').trim().slice(0, 120);
+  var sentence = 'Ich heiße ' + (name || '…') + '.';
+  document.getElementById('sentence').textContent = sentence;
+  document.getElementById('meaning').textContent = '= My name is ' + (name || '…') + '.';
+  if (name) document.getElementById('title').textContent = 'Wunderbar, ' + name + '!';
+  function say() {
+    try {
+      var u = new SpeechSynthesisUtterance(sentence); u.lang = 'de-DE'; u.rate = 0.85;
+      speechSynthesis.cancel(); speechSynthesis.speak(u);
+    } catch (e) {}
+  }
+  document.getElementById('say').addEventListener('click', say);
+  var colors = ['#FFCE00', '#C8161D', '#FFFFFF', '#DFF1FF'];
+  for (var i = 0; i < 40; i++) {
+    var c = document.createElement('span'); c.className = 'confetti';
+    c.style.left = Math.random() * 100 + 'vw'; c.style.background = colors[i % 4];
+    c.style.animationDuration = (2.5 + Math.random() * 2.5) + 's'; c.style.animationDelay = (Math.random() * 1.2) + 's';
+    document.body.appendChild(c);
+  }
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbyxQpXjw1IgLUvASKZyuzHz5bUDpyA3GuVN3Amyxg7y3akp8yoEUFoJALXriXrMVHgvmg/exec';
+  var key = 'brezi-challenge-' + email;
+  var done = false; try { done = sessionStorage.getItem(key) === '1'; } catch (e) {}
+  if (email && !done) {
+    fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams({ form: 'challenge', name: name, email: email }) })
+      .then(function () { try { sessionStorage.setItem(key, '1'); } catch (e) {} })
+      .catch(function () {});
+  }
+})();
+</script>
+</body>
+</html>
