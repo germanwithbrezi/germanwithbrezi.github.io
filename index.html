@@ -321,8 +321,9 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
 <h2 class="display" style="margin: 0; font-size: 58px">Not ready yet? <span style="color: #C8161D">Grab the free Starter Kit</span></h2>
 <p style="margin: 0; font-size: 19px; line-height: 1.5">A short PDF with the first words and phrases you need, a cheat sheet for der/die/das, and a sample lesson so you can see how my classes run. Leave your email and it lands in your inbox.</p>
-<form @submit.prevent="send('kit')" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
+<form @submit.prevent="send('kit')" style="position: relative; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
 <div v-if="forms.kit.state !== 'sent'" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; width: 100%">
+<input v-model="forms.kit.website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px">
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left; flex: 1 1 180px">First name<input v-model="forms.kit.name" required autocomplete="given-name" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"></label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left; flex: 2 1 240px">Email<input v-model="forms.kit.email" type="email" required autocomplete="email" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"></label>
 <button type="submit" class="press" :disabled="forms.kit.state === 'sending'" style="background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 5px 5px 0 #1A1A1A; padding: 13px 22px; font-family: Nunito, system-ui, sans-serif; font-size: 18px; font-weight: 800">{{ forms.kit.state === 'sending' ? 'Sending…' : 'Send me the free kit' }}</button>
@@ -342,13 +343,14 @@ a{color:#C8161D}a:hover{color:#8E0E13}
 <p style="margin: 0; font-size: 20px; line-height: 1.5">30 minutes on Zoom. We say hallo, you tell me your plans, and you try a mini-lesson. No pressure to join.</p>
 <p style="margin: 0; font-size: 17px; line-height: 1.5">Just have a question? Use the same form. You'll get an email reply.</p>
 </div>
-<form @submit.prevent="send('demo')" style="flex: 1 1 420px; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #1A1A1A; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<form @submit.prevent="send('demo')" style="position: relative; flex: 1 1 420px; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #1A1A1A; padding: 28px; display: flex; flex-direction: column; gap: 14px">
 <div v-if="forms.demo.state !== 'sent'" style="display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; flex-wrap: wrap; gap: 8px" role="group" aria-label="What would you like?">
 <button type="button" class="press" @click="forms.demo.kind = 'Free demo class'" :aria-pressed="forms.demo.kind === 'Free demo class'" :style="pill(forms.demo.kind === 'Free demo class')">Free demo class</button>
 <button type="button" class="press" @click="forms.demo.kind = '1-on-1 lessons'" :aria-pressed="forms.demo.kind === '1-on-1 lessons'" :style="pill(forms.demo.kind === '1-on-1 lessons')">1-on-1 lessons</button>
 <button type="button" class="press" @click="forms.demo.kind = 'A question'" :aria-pressed="forms.demo.kind === 'A question'" :style="pill(forms.demo.kind === 'A question')">Ask a question</button>
 </div>
+<input v-model="forms.demo.website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px">
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Your name<input v-model="forms.demo.name" required autocomplete="name" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"></label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px; text-align: left">Your email<input v-model="forms.demo.email" type="email" required autocomplete="email" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 3px solid #1A1A1A; border-radius: 12px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; background: #FFFFFF; color: #1A1A1A"></label>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px">
@@ -629,25 +631,22 @@ class Component extends DCLogic {
   const comp = new Component({});
   const store = PetiteVue.reactive({ s: comp.state });
   comp.state = store.s;
-  // Google Form connection: fill in after creating the forms (see ops repo docs/forms-setup.md).
-  const FORMS = {
-    demo: { action: '', fields: { kind: '', name: '', email: '', level: '', time: '', message: '' } },
-    kit: { action: '', fields: { name: '', email: '' } }
-  };
+  // Backend: paste the Apps Script web app URL here (see ops repo docs/forms-setup.md).
+  const ENDPOINT = '';
   PetiteVue.createApp({
     get v() { return comp.renderVals(); },
     forms: {
-      demo: { kind: 'Free demo class', name: '', email: '', level: 'A1 – from zero', time: 'Weekday evenings', message: '', state: 'idle' },
-      kit: { name: '', email: '', state: 'idle' }
+      demo: { kind: 'Free demo class', name: '', email: '', level: 'A1 – from zero', time: 'Weekday evenings', message: '', website: '', state: 'idle' },
+      kit: { name: '', email: '', website: '', state: 'idle' }
     },
     pill(on) { return 'padding: 9px 14px; border: 3px solid #1A1A1A; border-radius: 999px; font-family: Nunito, system-ui, sans-serif; font-size: 15px; font-weight: 800; background: ' + (on ? '#1A1A1A' : '#FFFFFF') + '; color: ' + (on ? '#FFCE00' : '#1A1A1A'); },
     send(which) {
-      const f = this.forms[which], cfg = FORMS[which];
-      if (!cfg.action) { f.state = 'soon'; return; }
+      const f = this.forms[which];
+      if (!ENDPOINT) { f.state = 'soon'; return; }
       f.state = 'sending';
-      const body = new URLSearchParams();
-      Object.keys(cfg.fields).forEach((k) => { if (cfg.fields[k]) body.append(cfg.fields[k], f[k] || ''); });
-      fetch(cfg.action, { method: 'POST', mode: 'no-cors', body: body })
+      const body = new URLSearchParams({ form: which });
+      ['kind', 'name', 'email', 'level', 'time', 'message', 'website'].forEach((k) => { if (f[k] !== undefined) body.append(k, f[k]); });
+      fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: body })
         .then(() => { f.state = 'sent'; })
         .catch(() => { f.state = 'error'; });
     }
