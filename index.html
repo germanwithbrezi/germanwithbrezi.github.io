@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>German with Sruthi — Learn German A1</title>
+<meta name="description" content="Online German A1 and A2 classes for beginners in India. Small live batches on Zoom, Goethe/telc exam prep, taught in English by Sruthi, who lives in Germany.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&amp;family=Nunito:wght@400;600;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Nunito',system-ui,sans-serif;color:#1A1A1A;background:#FFFFFF}
+a{color:#C8161D}a:hover{color:#8E0E13}
+.display{font-family:'Bangers',system-ui,sans-serif;letter-spacing:1.5px;font-weight:400}
+.halftone{background-image:radial-gradient(rgba(26,26,26,0.13) 1.3px, transparent 1.6px);background-size:14px 14px}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-12px) rotate(2deg)}}
+@keyframes blink{0%,90%,100%{transform:scaleY(1)}94%{transform:scaleY(0.1)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes wiggle{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.bob{animation:bob 3.2s ease-in-out infinite}
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 4s infinite}
+.ticker{animation:ticker 60s linear infinite}
+@keyframes tickerRev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.ticker-rev{animation:tickerRev 70s linear infinite}
+.wiggle{animation:wiggle 2.4s ease-in-out infinite}
+@keyframes pop{0%{transform:scale(.6) rotate(-6deg);opacity:0}70%{transform:scale(1.06) rotate(2deg);opacity:1}100%{transform:scale(1) rotate(0)}}
+.pop{animation:pop .45s ease-out}
+.press{transition:transform .12s ease, box-shadow .12s ease;cursor:pointer}
+.press:hover{transform:translate(-2px,-2px)}
+.press:active{transform:translate(3px,3px)}
+@media (prefers-reduced-motion: reduce){.bob,.eye,.ticker,.ticker-rev,.wiggle,.pop{animation:none}}
+</style>
+<style>[v-cloak]{display:none}html{scroll-behavior:smooth}</style>
+</head>
+<body>
+<div id="app" v-scope v-cloak>
+<div style="width: 100%; overflow-x: hidden">
+
+<!-- NAV -->
+<nav style="position: sticky; top: 0; z-index: 10; background: #FFCE00; border-bottom: 4px solid #1A1A1A">
+<div style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<a href="#top" class="display" style="font-size: 30px; color: #1A1A1A; text-decoration: none">German <span style="color: #C8161D">with</span> Sruthi</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; font-weight: 800; font-size: 16px">
+<a href="#quiz" style="color: #1A1A1A; text-decoration: none">Level quiz</a>
+<a href="#course" style="color: #1A1A1A; text-decoration: none">Courses</a>
+<a href="#batches" style="color: #1A1A1A; text-decoration: none">Batches</a>
+<a href="#questions" style="color: #1A1A1A; text-decoration: none">FAQ</a>
+<a href="play.html" style="color: #1A1A1A; text-decoration: none">Play &amp; learn</a>
+<a href="#book" class="press" style="background: #C8161D; color: #FFFFFF; text-decoration: none; padding: 10px 18px; border: 3px solid #1A1A1A; border-radius: 999px; box-shadow: 4px 4px 0 #1A1A1A">Free demo class</a>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<header id="top" class="halftone" style="background-color: #FFF6CC; border-bottom: 4px solid #1A1A1A">
+<div style="max-width: 1180px; margin: 0 auto; padding: 64px 24px 72px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<span style="align-self: flex-start; background: #1A1A1A; color: #FFCE00; font-weight: 800; padding: 6px 14px; border-radius: 6px; font-size: 15px; transform: rotate(-2deg)">GERMAN A1 · A2 · ONLINE · FROM ZERO</span>
+<h1 class="display" style="margin: 0; font-size: 84px; line-height: 0.95">Learn German.<br><span style="color: #C8161D">Laugh a little.</span><br>Pass A1 &amp; A2.</h1>
+<p style="margin: 0; font-size: 21px; line-height: 1.5; max-width: 560px">Small live A1 and A2 batches, taught in English by a teacher who lives in Germany. Exam-focused, fun, and never boring.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<a href="#book" class="press" style="background: #C8161D; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 18px; padding: 16px 26px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Book a free demo class</a>
+<a href="play.html" class="press" style="background: #FFFFFF; color: #1A1A1A; text-decoration: none; font-weight: 800; font-size: 18px; padding: 16px 26px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Play der · die · das</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; font-size: 15px; font-weight: 800">
+<span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 14px">Live on Zoom</span>
+<span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 14px">5–8 learners per batch</span>
+<span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 14px">Goethe / telc exam prep</span>
+<span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 14px">From ₹9,000 per level</span>
+</div>
+</div>
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; align-items: center; gap: 8px">
+<button class="press" @click="v.nextGreeting" aria-label="Make Brezi say another German greeting" style="background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 28px; padding: 18px 30px; box-shadow: 6px 6px 0 #1A1A1A; font-family: 'Bangers', system-ui, sans-serif; font-size: 48px; letter-spacing: 1.5px; color: #1A1A1A; position: relative">{{ v.greeting }}</button>
+<span style="font-size: 14px; font-weight: 600">tap the bubble</span>
+<svg class="bob" width="300" height="260" viewBox="0 0 220 190" aria-hidden="true">
+<path d="M110 160 C 45 160, 22 98, 52 64 C 82 30, 128 66, 110 104 C 92 66, 138 30, 168 64 C 198 98, 175 160, 110 160 Z" fill="none" stroke="#1A1A1A" stroke-width="30" stroke-linejoin="round"></path>
+<path d="M110 160 C 45 160, 22 98, 52 64 C 82 30, 128 66, 110 104 C 92 66, 138 30, 168 64 C 198 98, 175 160, 110 160 Z" fill="none" stroke="#C9813F" stroke-width="22" stroke-linejoin="round"></path>
+<circle cx="60" cy="70" r="3" fill="#FFFFFF"></circle>
+<circle cx="160" cy="72" r="3" fill="#FFFFFF"></circle>
+<circle cx="72" cy="140" r="3" fill="#FFFFFF"></circle>
+<circle cx="150" cy="138" r="3" fill="#FFFFFF"></circle>
+<circle cx="182" cy="110" r="3" fill="#FFFFFF"></circle>
+<ellipse class="eye" cx="96" cy="128" rx="7" ry="9" fill="#1A1A1A"></ellipse>
+<ellipse class="eye" cx="124" cy="128" rx="7" ry="9" fill="#1A1A1A"></ellipse>
+<path d="M98 144 Q 110 154 122 144" fill="none" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round"></path>
+<circle cx="86" cy="142" r="5" fill="#F08A8A"></circle>
+<circle cx="134" cy="142" r="5" fill="#F08A8A"></circle>
+</svg>
+<span class="display" style="font-size: 26px">Meet Brezi, your pretzel buddy</span>
+</div>
+</div>
+</header>
+
+<!-- TICKER -->
+<div aria-hidden="true" style="background: #1A1A1A; color: #FFCE00; overflow: hidden; padding: 14px 0">
+<div class="ticker" style="display: flex; width: max-content; gap: 40px">
+<template v-for="(t, $index) in v.tickerItems">
+<span class="display" style="font-size: 30px; white-space: nowrap">{{ t }} <span style="color: #C8161D">✦</span></span>
+</template>
+</div>
+</div>
+<div aria-hidden="true" style="background: #FFCE00; color: #1A1A1A; overflow: hidden; border-top: 3px solid #1A1A1A; border-bottom: 4px solid #1A1A1A; padding: 12px 0">
+<div class="ticker-rev" style="display: flex; width: max-content; gap: 40px">
+<template v-for="(t, $index) in v.tickerItems2">
+<span style="font-size: 22px; font-weight: 800; white-space: nowrap">{{ t.de }} <span style="font-weight: 600; color: #8E0E13">= {{ t.en }}</span></span>
+</template>
+</div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how" style="max-width: 1180px; margin: 0 auto; padding: 72px 24px 24px; display: flex; flex-direction: column; gap: 26px">
+<h2 class="display" style="margin: 0; font-size: 60px">How the online class <span style="color: #C8161D">works</span></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
+<div style="background: #FFF6CC; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
+<span class="display" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">1</span>
+<strong style="font-size: 20px">Free demo class</strong>
+<span style="font-size: 16px; line-height: 1.5">45 minutes on Zoom. Meet me, try the method, check your level.</span>
+</div>
+<div style="background: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
+<span class="display" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">2</span>
+<strong style="font-size: 20px">Live classes on Zoom</strong>
+<span style="font-size: 16px; line-height: 1.5">5–8 learners, 3 classes a week, lots of speaking in small breakout rooms.</span>
+</div>
+<div style="background: #FFE3E3; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
+<span class="display" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">3</span>
+<strong style="font-size: 20px">Practise between classes</strong>
+<span style="font-size: 16px; line-height: 1.5">Homework in Google Classroom. Missed a class? Watch the recording.</span>
+</div>
+<div style="background: #E6F6EC; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; padding: 22px; display: flex; flex-direction: column; gap: 10px">
+<span class="display" style="width: 56px; height: 56px; border-radius: 50%; background: #C8161D; color: #FFFFFF; border: 3px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 32px">4</span>
+<strong style="font-size: 20px">Mock exams → certificate</strong>
+<span style="font-size: 16px; line-height: 1.5">Timed Goethe/telc practice tests, then you book the real exam with confidence.</span>
+</div>
+</div>
+</section>
+
+<!-- COURSE -->
+<section id="course" style="max-width: 1180px; margin: 0 auto; padding: 60px 24px; display: flex; flex-wrap: wrap; gap: 28px; align-items: stretch">
+<div style="flex: 999 1 560px; min-width: 0; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #1A1A1A; padding: 36px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; gap: 10px" role="group" aria-label="Choose a level">
+<template v-for="(l, $index) in v.levels">
+<button class="press" @click="l.pick" :disabled="l.disabled" :aria-pressed="l.active" :style="l.style">{{ l.label }}</button>
+</template>
+</div>
+<span style="background: #FFCE00; border: 3px solid #1A1A1A; padding: 6px 14px; border-radius: 999px; font-weight: 800; font-size: 14px">NEXT BATCH · [START DATE]</span>
+</div>
+<h2 class="display" style="margin: 0; font-size: 58px">{{ v.course.title }}</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.5">{{ v.course.lead }}</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; font-size: 18px">
+<template v-for="(it, $index) in v.course.items">
+<div :style="it.style"><strong>{{ it.head }}</strong><br>{{ it.text }}</div>
+</template>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px">
+<div style="display: flex; flex-direction: column">
+<span class="display" style="font-size: 64px; line-height: 1; color: #C8161D">₹9,000</span>
+<span style="font-size: 16px">per level · or 3 × ₹3,000</span>
+</div>
+<a href="#book" class="press" style="background: #C8161D; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 18px; padding: 16px 26px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Join the waitlist</a>
+</div>
+</div>
+<div class="halftone" style="flex: 1 1 320px; background-color: #FFF6CC; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #1A1A1A; padding: 32px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center">
+<img src="assets/sruthi.jpg" alt="Sruthi, your German teacher" style="width: 170px; height: 170px; border-radius: 50%; border: 4px solid #1A1A1A; box-shadow: 5px 5px 0 #C8161D; object-fit: cover; background: #FFFFFF">
+<h3 class="display" style="margin: 0; font-size: 40px">Hallo, ich bin Sruthi!</h3>
+<div style="display: flex; gap: 8px" role="group" aria-label="Read my intro in">
+<template v-for="(t, $index) in v.introTabs">
+<button class="press" @click="t.pick" :aria-pressed="t.active" :style="t.style">{{ t.label }}</button>
+</template>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.55">{{ v.intro }}</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-size: 14px; font-weight: 800">
+<span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 12px">Lives in Germany</span>
+<span style="background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 12px">B1 · studying B2</span>
+<a href="#languages" style="background: #1A1A1A; color: #FFCE00; text-decoration: none; border: 2px solid #1A1A1A; border-radius: 999px; padding: 6px 12px">Speaks 5 languages →</a>
+</div>
+</div>
+</section>
+
+<!-- LANGUAGES -->
+<section id="languages" style="max-width: 1180px; margin: 0 auto; padding: 40px 24px 80px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h2 class="display" style="margin: 0; font-size: 60px">One teacher. <span style="color: #C8161D">Five languages.</span></h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.5">Classes run in English. If a grammar point just won't click, I can explain it in your language. Tap one.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<template v-for="(lg, $index) in v.langs">
+<button class="press" @click="lg.pick" :aria-pressed="lg.active" :style="lg.style">{{ lg.name }}</button>
+</template>
+</div>
+<div class="halftone" style="background-color: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #1A1A1A; padding: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 28px">
+<div class="wiggle" style="background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 28px; padding: 18px 28px; font-size: 44px; font-weight: 800">{{ v.lang.hello }}</div>
+<p style="margin: 0; flex: 1 1 320px; font-size: 26px; font-weight: 800; line-height: 1.4">{{ v.lang.line }}</p>
+</div>
+</section>
+
+<!-- SPIN QUIZ -->
+<section id="quiz" class="halftone" style="background-color: #FFF6CC; border-top: 4px solid #1A1A1A; border-bottom: 4px solid #1A1A1A; margin-top: 40px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px">
+<h2 class="display" style="margin: 0; font-size: 64px; line-height: 1">Not sure about your level? <span style="color: #C8161D">Spin the wheel.</span></h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.5">Spin 5 times and answer whatever the wheel lands on. At the end, Brezi tells you whether to start with A1 or jump into A2.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<template v-for="(d, $index) in v.quizDots">
+<span aria-hidden="true" :style="d.style"></span>
+</template>
+</div>
+<span class="display" style="font-size: 28px">{{ v.quizStatus }}</span>
+</div>
+<div style="flex: 1 1 420px; display: flex; justify-content: center">
+<div style="position: relative; width: 380px; max-width: 100%; height: 420px; display: flex; justify-content: center; align-items: flex-end">
+<div aria-hidden="true" style="position: absolute; top: 0; left: 50%; margin-left: -22px; width: 0; height: 0; border-left: 22px solid transparent; border-right: 22px solid transparent; border-top: 40px solid #1A1A1A; z-index: 3"></div>
+<div aria-hidden="true" :style="v.wheelStyle">
+<template v-for="(w, $index) in v.wheelLabels">
+<span :style="w.style">{{ w.label }}</span>
+</template>
+</div>
+<button class="press" @click="v.spin" :disabled="v.spinDisabled" style="position: absolute; left: 50%; bottom: 160px; margin-left: -50px; width: 100px; height: 100px; border-radius: 50%; border: 4px solid #1A1A1A; background: #FFFFFF; box-shadow: 4px 4px 0 #1A1A1A; font-family: Bangers, system-ui, sans-serif; letter-spacing: 1.5px; font-size: 30px; color: #C8161D; z-index: 2">{{ v.spinLabel }}</button>
+<template v-if="v.showQuestion">
+<div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 4">
+<div class="pop" role="dialog" aria-label="Quiz question" style="width: 100%; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #C8161D; padding: 26px; display: flex; flex-direction: column; gap: 14px">
+<span :style="v.qBadgeStyle">{{ v.qTopic }} · {{ v.qLevel }}</span>
+<p style="margin: 0; font-size: 22px; font-weight: 800; line-height: 1.35">{{ v.qText }}</p>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<template v-for="(o, $index) in v.qOptions">
+<button class="press" @click="o.pick" :style="o.style">{{ o.label }}</button>
+</template>
+</div>
+<template v-if="v.qAnswered">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
+<span style="font-size: 18px; font-weight: 800">{{ v.qFeedback }}</span>
+<button class="press" @click="v.closeQuestion" style="background: #FFCE00; color: #1A1A1A; border: 3px solid #1A1A1A; border-radius: 12px; box-shadow: 3px 3px 0 #1A1A1A; padding: 10px 18px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; font-weight: 800">{{ v.continueLabel }}</button>
+</div>
+</template>
+</div>
+</div>
+</template>
+<template v-if="v.showResult">
+<div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 4">
+<div class="pop" role="dialog" aria-label="Your level result" style="width: 100%; background: #1A1A1A; color: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 24px; box-shadow: 8px 8px 0 #FFCE00; padding: 30px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+<span style="font-size: 15px; font-weight: 800; color: #FFCE00">YOU GOT {{ v.correct }} OF 5</span>
+<span class="display" style="font-size: 52px; line-height: 1; color: #FFCE00">{{ v.resultTitle }}</span>
+<p style="margin: 0; font-size: 17px; line-height: 1.5">{{ v.resultText }}</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px">
+<a href="#book" class="press" style="background: #C8161D; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 17px; padding: 12px 20px; border: 3px solid #FFFFFF; border-radius: 12px">Book a free demo</a>
+<button class="press" @click="v.resetQuiz" style="background: #FFFFFF; color: #1A1A1A; border: 3px solid #FFFFFF; border-radius: 12px; padding: 12px 20px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; font-weight: 800">Spin again</button>
+</div>
+</div>
+</div>
+</template>
+</div>
+</div>
+</div>
+</section>
+
+<!-- BATCHES -->
+<section id="batches" style="max-width: 1180px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 class="display" style="margin: 0; font-size: 60px">Next <span style="color: #C8161D">batches</span></h2>
+<p style="margin: 0; font-size: 19px">A new batch every month. Need another time? Just ask.</p>
+</div>
+<div style="background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0 #1A1A1A; overflow: hidden">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 18px 22px; border-bottom: 3px solid #1A1A1A">
+<span style="background: #FFCE00; border: 2px solid #1A1A1A; border-radius: 999px; padding: 4px 12px; font-weight: 800; font-size: 15px">A1</span>
+<span class="display" style="font-size: 28px; flex: 1 1 160px">Starts [DATE]</span>
+<span style="font-size: 17px; flex: 1 1 200px">Weekday evenings</span>
+<a href="[GOOGLE FORM LINK]" style="font-weight: 800; font-size: 18px">Reserve →</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 18px 22px; border-bottom: 3px solid #1A1A1A">
+<span style="background: #FFCE00; border: 2px solid #1A1A1A; border-radius: 999px; padding: 4px 12px; font-weight: 800; font-size: 15px">A1</span>
+<span class="display" style="font-size: 28px; flex: 1 1 160px">Starts [DATE]</span>
+<span style="font-size: 17px; flex: 1 1 200px">Weekends</span>
+<a href="[GOOGLE FORM LINK]" style="font-weight: 800; font-size: 18px">Reserve →</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 18px 22px">
+<span style="background: #1A1A1A; color: #FFCE00; border: 2px solid #1A1A1A; border-radius: 999px; padding: 4px 12px; font-weight: 800; font-size: 15px">A2</span>
+<span class="display" style="font-size: 28px; flex: 1 1 160px">Starts [DATE]</span>
+<span style="font-size: 17px; flex: 1 1 200px">Weekday evenings</span>
+<a href="[GOOGLE FORM LINK]" style="font-weight: 800; font-size: 18px">Reserve →</a>
+</div>
+</div>
+<p style="margin: 0; font-size: 18px">Prefer private lessons? <a href="[CALENDLY LINK]" style="font-weight: 800">Book a 1-on-1 time →</a></p>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" style="max-width: 1180px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 24px">
+<h2 class="display" style="margin: 0; font-size: 60px">What students <span style="color: #C8161D">say</span></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px">
+<div style="background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 22px; box-shadow: 6px 6px 0 #1A1A1A; padding: 24px; display: flex; flex-direction: column; gap: 14px; position: relative">
+<span class="display" style="font-size: 26px; color: #C8161D">★★★★★</span>
+<p style="margin: 0; font-size: 18px; line-height: 1.5">[Student review: add after your first demo classes]</p>
+<span style="font-weight: 800">[Name] · [City] · [A1 / A2]</span>
+</div>
+<div style="background: #DFF1FF; border: 4px solid #1A1A1A; border-radius: 22px; box-shadow: 6px 6px 0 #1A1A1A; padding: 24px; display: flex; flex-direction: column; gap: 14px; transform: rotate(1deg)">
+<span class="display" style="font-size: 26px; color: #C8161D">★★★★★</span>
+<p style="margin: 0; font-size: 18px; line-height: 1.5">[Student review: add after your first demo classes]</p>
+<span style="font-weight: 800">[Name] · [City] · [A1 / A2]</span>
+</div>
+<div style="background: #FFE3E3; border: 4px solid #1A1A1A; border-radius: 22px; box-shadow: 6px 6px 0 #1A1A1A; padding: 24px; display: flex; flex-direction: column; gap: 14px; transform: rotate(-1deg)">
+<span class="display" style="font-size: 26px; color: #C8161D">★★★★★</span>
+<p style="margin: 0; font-size: 18px; line-height: 1.5">[Student review: add after your first demo classes]</p>
+<span style="font-weight: 800">[Name] · [City] · [A1 / A2]</span>
+</div>
+</div>
+</section>
+
+<!-- QUESTIONS -->
+<section id="questions" style="max-width: 1180px; margin: 0 auto; padding: 80px 24px 40px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h2 class="display" style="margin: 0; font-size: 60px">Got a question? <span style="color: #C8161D">Click it.</span></h2>
+<p style="margin: 0; font-size: 19px">The things everyone asks before starting German.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; align-items: start">
+<template v-for="(q, $index) in v.questions">
+<div :style="q.cardStyle">
+<button class="press" @click="q.toggle" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; background: transparent; border: 0; padding: 20px 22px; text-align: left; font-family: 'Nunito', system-ui, sans-serif; font-size: 20px; font-weight: 800; color: #1A1A1A">
+<span>{{ q.title }}</span>
+<span class="display" style="flex: none; width: 42px; height: 42px; border: 3px solid #1A1A1A; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 30px">{{ q.sign }}</span>
+</button>
+<template v-if="q.open">
+<div style="padding: 0 22px 22px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 17px; line-height: 1.55">{{ q.answer }}</p>
+<a :href="q.href" style="font-weight: 800">{{ q.more }} →</a>
+</div>
+</template>
+</div>
+</template>
+</div>
+</section>
+
+<!-- STARTER KIT -->
+<section id="kit" style="max-width: 1180px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
+<div aria-hidden="true" style="flex: 1 1 300px; display: flex; justify-content: center">
+<div style="width: 280px; background: #FFFFFF; border: 4px solid #1A1A1A; border-radius: 12px; box-shadow: 10px 10px 0 #FFCE00; padding: 26px; display: flex; flex-direction: column; gap: 10px; transform: rotate(-4deg)">
+<span class="display" style="font-size: 30px; color: #C8161D">A1 Starter Kit</span>
+<span style="font-size: 15px; font-weight: 800">✓ 50 must-know words</span>
+<span style="font-size: 15px; font-weight: 800">✓ 10 survival phrases</span>
+<span style="font-size: 15px; font-weight: 800">✓ der/die/das cheat sheet</span>
+<span style="font-size: 15px; font-weight: 800">✓ A sample lesson plan</span>
+<span style="font-size: 13px; color: #555555">PDF · free</span>
+</div>
+</div>
+<div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<h2 class="display" style="margin: 0; font-size: 58px">Not ready yet? <span style="color: #C8161D">Grab the free Starter Kit</span></h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.5">A short PDF with the first words and phrases you need, a cheat sheet for der/die/das, and a sample lesson so you can see how my classes run. Leave your email and it lands in your inbox.</p>
+<a href="[STARTER KIT FORM LINK]" class="press" style="align-self: flex-start; background: #C8161D; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 18px; padding: 16px 26px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Send me the free kit</a>
+</div>
+</section>
+
+<!-- CTA -->
+<section id="book" class="halftone" style="background-color: #C8161D; border-top: 4px solid #1A1A1A">
+<div style="max-width: 1180px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; color: #FFFFFF">
+<h2 class="display" style="margin: 0; font-size: 76px; line-height: 1">Try a class. It's free.</h2>
+<p style="margin: 0; font-size: 20px; max-width: 640px; line-height: 1.5">45 minutes on Zoom. You'll introduce yourself in German before the class ends. Promise.</p>
+<a href="[GOOGLE FORM LINK]" class="press" style="background: #FFCE00; color: #1A1A1A; text-decoration: none; font-weight: 800; font-size: 20px; padding: 18px 32px; border: 3px solid #1A1A1A; border-radius: 14px; box-shadow: 6px 6px 0 #1A1A1A">Book my free demo class</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: #1A1A1A; color: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 15px">
+<span class="display" style="font-size: 24px; color: #FFCE00">German with Sruthi</span>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<a href="[INSTAGRAM LINK]" style="color: #FFCE00">Instagram [@HANDLE]</a>
+<a href="mailto:nagarisruthi@gmail.com" style="color: #FFCE00">nagarisruthi@gmail.com</a>
+</div>
+</div>
+</footer>
+
+</div>
+</div>
+<script src="assets/petite-vue.iife.js"></script>
+<script>
+class DCLogic {
+  constructor(props) { this.props = props || {}; }
+  setState(patch) { Object.assign(this.state, patch); }
+  forceUpdate() {}
+}
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { greetIdx: 0, openQ: null, gameIdx: 0, answered: false, picked: null, score: 0, tries: 0, flipped: {}, level: 'A1', introLang: 'en', lang: 'de', rot: 0, spinning: false, phase: 'idle', seg: 0, asked: [], qPicked: null, correct: 0, correctA2: 0 };
+  }
+  componentWillUnmount() { if (this.spinTimer) clearTimeout(this.spinTimer); }
+  speak(text) {
+    try {
+      if (window.speechSynthesis) {
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'de-DE';
+        u.rate = 0.85;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(u);
+      }
+    } catch (e) {}
+  }
+  renderVals() {
+    const s = this.state;
+    const greetings = ['Hallo!', 'Servus!', 'Moin!', 'Guten Tag!', 'Grüß Gott!', 'Na?'];
+    const qs = [
+      { id: 'a1', title: 'What are A1 and A2?', answer: 'They are the first two of six levels (A1 → C2). In A1 you introduce yourself, shop, tell the time and fill in forms. In A2 you talk about your past, your work and daily life, and handle appointments. Each level is about 80 hours of live class with me.', more: 'See the courses', href: '#course', bg: '#FFF6CC' },
+      { id: 'why', title: 'Why do I need a German certificate?', answer: 'Many German visas and jobs ask for proof of German. A1 is often the first requirement, and jobs like nursing usually need B1 or B2 later. A1 is where every path starts.', more: 'Book a free demo', href: '#book', bg: '#DFF1FF' },
+      { id: 'exam', title: 'What is in the Goethe A1 and A2 exams?', answer: 'Both have four parts: listening, reading, writing and speaking. A1 checks simple everyday German. A2 adds short letters and longer conversations. The last classes of each level are full mock exams.', more: 'See the course', href: '#course', bg: '#FFE3E3' },
+      { id: 'long', title: 'How long does it take?', answer: 'About 14 weeks per level: 40 live classes of 2 hours, 3 classes a week, plus around 2 hours of homework a week. A1 + A2 together take about 7 months.', more: 'See the course', href: '#course', bg: '#E6F6EC' },
+      { id: 'zero', title: 'I know zero German. Is that OK?', answer: 'Perfect, actually. A1 starts from "Hallo". Everything is explained in English, step by step.', more: 'Try the der/die/das game', href: 'play.html', bg: '#FFF6CC' },
+      { id: 'lang', title: 'Can I join A2 directly?', answer: 'Yes, if you passed A1 or already know the A1 basics. Book a free demo class and I will check your level in 10 minutes.', more: 'Book a free demo', href: '#book', bg: '#DFF1FF' }
+    ];
+    const questions = qs.map((q) => {
+      const open = s.openQ === q.id;
+      return {
+        title: q.title, answer: q.answer, more: q.more, href: q.href, open: open,
+        sign: open ? '–' : '+',
+        cardStyle: 'background: ' + (open ? q.bg : '#FFFFFF') + '; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: ' + (open ? '8px 8px 0 #C8161D' : '6px 6px 0 #1A1A1A') + '; overflow: hidden',
+        toggle: () => this.setState({ openQ: open ? null : q.id })
+      };
+    });
+    const words = [
+      { w: 'Tisch', en: 'table', a: 'der' }, { w: 'Lampe', en: 'lamp', a: 'die' }, { w: 'Buch', en: 'book', a: 'das' },
+      { w: 'Kaffee', en: 'coffee', a: 'der' }, { w: 'Banane', en: 'banana', a: 'die' }, { w: 'Auto', en: 'car', a: 'das' },
+      { w: 'Apfel', en: 'apple', a: 'der' }, { w: 'Tasche', en: 'bag', a: 'die' }, { w: 'Haus', en: 'house', a: 'das' },
+      { w: 'Zug', en: 'train', a: 'der' }, { w: 'Brezel', en: 'pretzel', a: 'die' }, { w: 'Krankenhaus', en: 'hospital', a: 'das' }
+    ];
+    const cur = words[s.gameIdx % words.length];
+    const options = ['der', 'die', 'das'].map((a) => {
+      let bg = '#FFFFFF', col = '#1A1A1A';
+      if (s.answered) {
+        if (a === cur.a) { bg = '#157A41'; col = '#FFFFFF'; }
+        else if (a === s.picked) { bg = '#C8161D'; col = '#FFFFFF'; }
+      }
+      return {
+        label: a,
+        style: 'min-width: 120px; padding: 14px 22px; border: 3px solid #1A1A1A; border-radius: 16px; box-shadow: 5px 5px 0 #1A1A1A; background: ' + bg + '; color: ' + col + '; font-family: Bangers, system-ui, sans-serif; letter-spacing: 1.5px; font-size: 40px',
+        pick: () => {
+          if (this.state.answered) return;
+          this.setState({ answered: true, picked: a, tries: this.state.tries + 1, score: this.state.score + (a === cur.a ? 1 : 0) });
+          this.speak(cur.a + ' ' + cur.w);
+        }
+      };
+    });
+    let feedback = 'Pick the article!';
+    if (s.answered) feedback = s.picked === cur.a ? 'Richtig! It is ' + cur.a + ' ' + cur.w + '.' : 'Fast! It is ' + cur.a + ' ' + cur.w + '.';
+    const cardData = [
+      { de: 'Hallo', en: 'Hello', bg: '#FFF6CC' }, { de: 'Danke', en: 'Thank you', bg: '#DFF1FF' },
+      { de: 'Tschüss', en: 'Bye', bg: '#FFE3E3' }, { de: 'Wie geht’s?', en: 'How are you?', bg: '#E6F6EC' },
+      { de: 'Ich heiße …', en: 'My name is …', bg: '#DFF1FF' }, { de: 'das Krankenhaus', en: 'the hospital', bg: '#FFF6CC' }
+    ];
+    const cards = cardData.map((c, i) => {
+      const f = !!s.flipped[i];
+      return {
+        shown: f ? c.en : c.de,
+        side: f ? 'ENGLISH' : 'DEUTSCH',
+        speakLabel: 'Hear ' + c.de + ' in German',
+        style: 'background: ' + (f ? '#1A1A1A' : c.bg) + '; color: ' + (f ? '#FFCE00' : '#1A1A1A') + '; border: 4px solid #1A1A1A; border-radius: 18px; box-shadow: 6px 6px 0 ' + (f ? '#C8161D' : '#1A1A1A') + '; padding: 26px 18px 18px; min-height: 170px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 12px',
+        flip: () => { const n = Object.assign({}, this.state.flipped); n[i] = !n[i]; this.setState({ flipped: n }); },
+        speak: () => this.speak(c.de)
+      };
+    });
+    const tick = ['Hallo', 'Danke', 'Bitte', 'Tschüss', 'Guten Morgen', 'Guten Abend', 'Kaffee', 'Brezel', 'Wunderbar', 'Prost', 'Gemütlich', 'Feierabend', 'Genau', 'Entschuldigung', 'Lecker', 'Willkommen', 'Bahnhof', 'Freund', 'Sonne', 'Kuchen', 'Wasser', 'Brot', 'Super', 'Schön', 'Fernweh', 'Stadt', 'Zug', 'Apfel', 'Ja', 'Nein'];
+    const tick2 = [['Hallo', 'Hello'], ['Danke', 'Thank you'], ['Bitte', 'Please'], ['Lecker', 'Tasty'], ['Feierabend', 'Work is over!'], ['Gemütlich', 'Cosy'], ['Fernweh', 'Longing to travel'], ['Genau', 'Exactly'], ['Bahnhof', 'Train station'], ['Kuchen', 'Cake'], ['Schön', 'Beautiful'], ['Freund', 'Friend'], ['Wasser', 'Water'], ['Entschuldigung', 'Sorry'], ['Willkommen', 'Welcome']].map((x) => ({ de: x[0], en: x[1] }));
+    const segs = [
+      { label: 'Greetings', lvl: 'A1', bg: '#FFCE00', fg: '#1A1A1A', q: 'How do you say "Good morning"?', o: ['Guten Morgen', 'Gute Nacht', 'Guten Abend'], a: 0 },
+      { label: 'Numbers', lvl: 'A1', bg: '#C8161D', fg: '#FFFFFF', q: 'What is "zwölf"?', o: ['20', '12', '2'], a: 1 },
+      { label: 'Food', lvl: 'A1', bg: '#DFF1FF', fg: '#1A1A1A', q: '"Ich möchte einen Kaffee." What does the person want?', o: ['A cake', 'A tea', 'A coffee'], a: 2 },
+      { label: 'Family', lvl: 'A1', bg: '#1A1A1A', fg: '#FFCE00', q: '"Meine Schwester" means my…', o: ['sister', 'brother', 'mother'], a: 0 },
+      { label: 'Time', lvl: 'A1', bg: '#FFCE00', fg: '#1A1A1A', q: '"Es ist halb drei." What time is it?', o: ['3:30', '2:30', '3:00'], a: 1 },
+      { label: 'Verbs', lvl: 'A1', bg: '#C8161D', fg: '#FFFFFF', q: 'Ich ___ aus Indien.', o: ['kommst', 'kommt', 'komme'], a: 2 },
+      { label: 'Past tense', lvl: 'A2', bg: '#DFF1FF', fg: '#1A1A1A', q: 'Gestern ___ ich Pizza gegessen.', o: ['habe', 'bin', 'hatte'], a: 0 },
+      { label: 'Travel', lvl: 'A2', bg: '#1A1A1A', fg: '#FFCE00', q: 'Ich fahre ___ Zug nach Berlin.', o: ['mit der', 'mit dem', 'mit den'], a: 1 }
+    ];
+    const n = segs.length, step = 360 / n;
+    const grad = segs.map((g, i) => g.bg + ' ' + (i * step) + 'deg ' + ((i + 1) * step) + 'deg').join(', ');
+    const wheelStyle = 'position: absolute; left: 50%; top: 30px; margin-left: -180px; width: 360px; height: 360px; border-radius: 50%; border: 6px solid #1A1A1A; box-shadow: 6px 6px 0 #1A1A1A; box-sizing: border-box; background: conic-gradient(' + grad + '); transform: rotate(' + s.rot + 'deg); transition: transform 3.4s cubic-bezier(0.17, 0.67, 0.2, 1)';
+    const wheelLabels = segs.map((g, i) => ({
+      label: g.label,
+      style: 'position: absolute; left: 50%; top: 50%; width: 120px; margin-left: -60px; margin-top: -12px; text-align: center; font-family: Bangers, system-ui, sans-serif; letter-spacing: 1px; font-size: 22px; color: ' + g.fg + '; transform: rotate(' + (i * step + step / 2) + 'deg) translateY(-118px)'
+    }));
+    const done = s.asked.length;
+    const total = 5;
+    const cq = segs[s.seg];
+    const qOptions = cq.o.map((label, idx) => {
+      let bg = '#FFFFFF', col = '#1A1A1A';
+      if (s.qPicked !== null) {
+        if (idx === cq.a) { bg = '#157A41'; col = '#FFFFFF'; }
+        else if (idx === s.qPicked) { bg = '#C8161D'; col = '#FFFFFF'; }
+      }
+      return {
+        label: label,
+        style: 'text-align: left; padding: 12px 16px; border: 3px solid #1A1A1A; border-radius: 12px; box-shadow: 3px 3px 0 #1A1A1A; font-family: Nunito, system-ui, sans-serif; font-size: 18px; font-weight: 800; background: ' + bg + '; color: ' + col,
+        pick: () => {
+          if (this.state.qPicked !== null) return;
+          const ok = idx === cq.a;
+          this.setState({ qPicked: idx, correct: this.state.correct + (ok ? 1 : 0), correctA2: this.state.correctA2 + (ok && cq.lvl === 'A2' ? 1 : 0) });
+        }
+      };
+    });
+    const spin = () => {
+      const st = this.state;
+      if (st.spinning || st.phase !== 'idle' || st.asked.length >= total) return;
+      const left = segs.map((g, i) => i).filter((i) => st.asked.indexOf(i) === -1);
+      const pickI = left[Math.floor(Math.random() * left.length)];
+      const center = pickI * step + step / 2;
+      const base = st.rot - (st.rot % 360);
+      const target = base + 360 * 5 + (360 - center);
+      this.setState({ rot: target, spinning: true, seg: pickI });
+      this.spinTimer = setTimeout(() => {
+        this.setState({ spinning: false, phase: 'question', qPicked: null, asked: this.state.asked.concat([pickI]) });
+      }, 3500);
+    };
+    const closeQuestion = () => {
+      if (this.state.asked.length >= total) this.setState({ phase: 'result' });
+      else this.setState({ phase: 'idle', qPicked: null });
+    };
+    let resultTitle = 'Start with A1';
+    let resultText = 'Perfect starting point: we build your German from the very first word. A free demo class is the easiest way to begin.';
+    if (s.correct >= 4 && s.correctA2 >= 1) { resultTitle = 'A2 might be for you'; resultText = 'You already know the A1 basics. Book a free demo and we will confirm your level in 10 minutes.'; }
+    else if (s.correct >= 3) { resultTitle = 'A1, with a head start'; resultText = 'You know some German already. In A1 you will move fast and fill the gaps before the exam.'; }
+    const quizDots = [0, 1, 2, 3, 4].map((i) => ({ style: 'width: 22px; height: 22px; border-radius: 50%; border: 3px solid #1A1A1A; background: ' + (i < done ? '#C8161D' : '#FFFFFF') }));
+    let quizStatus = 'Tap SPIN to start!';
+    if (s.spinning) quizStatus = 'Spinning…';
+    else if (s.phase === 'result') quizStatus = 'Done! Your result is in.';
+    else if (done > 0) quizStatus = 'Question ' + done + ' of ' + total + ' · ' + s.correct + ' right so far';
+    const pill = (on) => 'padding: 10px 18px; border: 3px solid #1A1A1A; border-radius: 999px; font-family: Nunito, system-ui, sans-serif; font-size: 17px; font-weight: 800; box-shadow: 3px 3px 0 #1A1A1A; background: ' + (on ? '#1A1A1A' : '#FFFFFF') + '; color: ' + (on ? '#FFCE00' : '#1A1A1A');
+    const courseData = {
+      A1: { title: 'The A1 batch', lead: 'From zero to your first real conversations, and the Goethe/telc A1 certificate.', book: 'Netzwerk neu A1', exam: 'Goethe / telc A1 mock tests' },
+      A2: { title: 'The A2 batch', lead: 'For A1 graduates: talk about your past, your work and your plans, and pass Goethe/telc A2.', book: 'Netzwerk neu A2', exam: 'Goethe / telc A2 mock tests' }
+    };
+    const cd = courseData[s.level] || courseData.A1;
+    const tile = (bg) => 'background: ' + bg + '; border: 3px solid #1A1A1A; border-radius: 14px; padding: 16px';
+    const course = {
+      title: cd.title, lead: cd.lead,
+      items: [
+        { head: '5–8 learners', text: 'Small enough that everyone speaks', style: tile('#DFF1FF') },
+        { head: '40 live classes', text: '2 hours each on Zoom, 3 a week', style: tile('#FFE3E3') },
+        { head: cd.book, text: 'The book Goethe-Institut India uses', style: tile('#FFF6CC') },
+        { head: 'Exam-ready', text: cd.exam, style: tile('#E6F6EC') }
+      ]
+    };
+    const levels = [
+      { id: 'A1', label: 'A1' }, { id: 'A2', label: 'A2' }, { id: 'B1', label: 'B1 · coming soon', soon: true }
+    ].map((l) => {
+      const on = s.level === l.id;
+      return {
+        label: l.label, active: on ? 'true' : 'false', disabled: !!l.soon,
+        style: pill(on) + (l.soon ? '; opacity: 0.55; cursor: not-allowed' : ''),
+        pick: () => { if (!l.soon) this.setState({ level: l.id }); }
+      };
+    });
+    const intros = {
+      en: 'I live in Germany and use German every day: at the bakery, the doctor, the train station. I teach the German you will actually need, clearly, step by step, and with a lot of fun.',
+      de: 'Ich wohne in Deutschland und spreche jeden Tag Deutsch: beim Bäcker, beim Arzt und am Bahnhof. Ich unterrichte das Deutsch, das du wirklich brauchst: klar, Schritt für Schritt und mit viel Spaß.'
+    };
+    const introTabs = [{ id: 'en', label: 'English' }, { id: 'de', label: 'Deutsch' }].map((t) => {
+      const on = s.introLang === t.id;
+      return { label: t.label, active: on ? 'true' : 'false', style: pill(on), pick: () => this.setState({ introLang: t.id }) };
+    });
+    const langData = [
+      { id: 'de', name: 'Deutsch', hello: 'Hallo!', line: 'Ich erkläre es dir auch auf Deutsch.' },
+      { id: 'en', name: 'English', hello: 'Hello!', line: 'I explain everything in English.' },
+      { id: 'te', name: 'తెలుగు', hello: 'నమస్కారం!', line: 'నేను మీకు తెలుగులో కూడా వివరిస్తాను.' },
+      { id: 'ta', name: 'தமிழ்', hello: 'வணக்கம்!', line: 'நான் உங்களுக்கு தமிழிலும் விளக்குவேன்.' },
+      { id: 'hi', name: 'हिन्दी', hello: 'नमस्ते!', line: 'मैं आपको हिंदी में भी समझाऊँगी।' }
+    ];
+    const curLang = langData.find((l) => l.id === s.lang) || langData[0];
+    const langs = langData.map((l) => {
+      const on = s.lang === l.id;
+      return { name: l.name, active: on ? 'true' : 'false', style: pill(on).replace('font-size: 17px', 'font-size: 20px'), pick: () => this.setState({ lang: l.id }) };
+    });
+    return {
+      wheelStyle: wheelStyle, wheelLabels: wheelLabels, spin: spin,
+      spinDisabled: s.spinning || s.phase !== 'idle' || done >= total,
+      spinLabel: s.spinning ? '…' : 'SPIN',
+      showQuestion: s.phase === 'question', showResult: s.phase === 'result',
+      qTopic: cq.label, qLevel: cq.lvl, qText: cq.q, qOptions: qOptions,
+      qBadgeStyle: 'align-self: flex-start; padding: 4px 12px; border: 2px solid #1A1A1A; border-radius: 999px; font-size: 14px; font-weight: 800; background: ' + (cq.lvl === 'A2' ? '#1A1A1A' : '#FFCE00') + '; color: ' + (cq.lvl === 'A2' ? '#FFCE00' : '#1A1A1A'),
+      qAnswered: s.qPicked !== null,
+      qFeedback: s.qPicked === null ? '' : (s.qPicked === cq.a ? 'Richtig!' : 'Fast! Answer: ' + cq.o[cq.a]),
+      continueLabel: done >= total ? 'See my level →' : 'Spin again →',
+      closeQuestion: closeQuestion,
+      correct: s.correct, resultTitle: resultTitle, resultText: resultText,
+      resetQuiz: () => this.setState({ phase: 'idle', asked: [], qPicked: null, correct: 0, correctA2: 0 }),
+      quizDots: quizDots, quizStatus: quizStatus,
+      course: course, levels: levels,
+      intro: intros[s.introLang] || intros.en, introTabs: introTabs,
+      lang: curLang, langs: langs,
+      greeting: greetings[s.greetIdx % greetings.length],
+      nextGreeting: () => {
+        const n = s.greetIdx + 1;
+        this.setState({ greetIdx: n });
+        this.speak(greetings[n % greetings.length]);
+      },
+      tickerItems: tick.concat(tick), tickerItems2: tick2.concat(tick2),
+      questions: questions,
+      word: cur.w, wordEn: cur.en,
+      wordNo: (s.gameIdx % words.length) + 1, wordCount: words.length,
+      options: options, feedback: feedback, answered: s.answered,
+      score: s.score, tries: s.tries,
+      nextWord: () => this.setState({ gameIdx: this.state.gameIdx + 1, answered: false, picked: null }),
+      cards: cards
+    };
+  }
+}
+(function () {
+  const comp = new Component({});
+  const store = PetiteVue.reactive({ s: comp.state });
+  comp.state = store.s;
+  PetiteVue.createApp({ get v() { return comp.renderVals(); } }).mount('#app');
+})();
+</script>
+</body>
+</html>
